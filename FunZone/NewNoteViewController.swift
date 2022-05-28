@@ -37,9 +37,11 @@ class NewNoteViewController: UIViewController {
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
-        dataText.remove(at: currentNoteId)
-        userDefault.set(dataText, forKey: "notes")
-        currentNoteId = -1
+        if currentNoteId != -1{
+            dataText.remove(at: currentNoteId)
+            userDefault.set(dataText, forKey: "notes")
+            currentNoteId = -1
+        }
     }
     
     func getCurrentText(){
