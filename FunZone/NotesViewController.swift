@@ -8,16 +8,14 @@
 import UIKit
 
 class NotesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet weak var notesCollectionView: UICollectionView!
     let userDefault = UserDefaults.standard
     var dataText : [String] = []
     
-    @IBOutlet weak var notesCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNotes()
         dataText = userDefault.object(forKey: "notes") as! [String]
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,14 +37,15 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NoteCollectionViewCell
         switch indexPath.item{
         case 0:
-            myCell.noteLabel.text = "New Note"
-            myCell.backgroundColor = UIColor.gray
+            myCell.noteLabel.text = "New Note\n+"
+            myCell.backgroundColor = UIColor.black
+            myCell.noteLabel.textColor = UIColor.white
             myCell.layer.cornerRadius = 10
             myCell.layer.masksToBounds = true
             return myCell    
         default:
             myCell.noteLabel.text = dataText[indexPath.row - 1]
-            myCell.backgroundColor = UIColor.gray
+            myCell.backgroundColor = UIColor.systemGray2
             myCell.layer.cornerRadius = 10
             myCell.layer.masksToBounds = true
             return myCell
