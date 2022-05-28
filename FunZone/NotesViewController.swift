@@ -59,7 +59,6 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
             userDefault.set(-1, forKey: "noteId")
         default:
             userDefault.set(indexPath.row - 1, forKey: "noteId")
-            
         }
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let newNoteScreen = storyBoard.instantiateViewController(withIdentifier: "NewNote")

@@ -10,6 +10,7 @@ import UIKit
 class NewNoteViewController: UIViewController {
     let userDefault = UserDefaults.standard
     @IBOutlet weak var note: UITextView!
+    var dataText : [String] = []
     var currentNoteId = 0
     
     override func viewDidLoad() {
@@ -24,22 +25,22 @@ class NewNoteViewController: UIViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
-        var notes = userDefault.object(forKey: "notes") as! [String]
         if(currentNoteId == -1){
-            notes.append(note.text)
+            dataText.append(note.text)
+            currentNoteId = dataText.count - 1 //create new note and save into new notes id
         }
         else{
-            notes[currentNoteId] = note.text
+            dataText[currentNoteId] = note.text
         }
         
-        userDefault.set(notes, forKey: "notes")
+        userDefault.set(dataText, forKey: "notes")
     }
     
     func getCurrentText(){
         currentNoteId = userDefault.integer(forKey: "noteId")
+        dataText = userDefault.object(forKey: "notes") as! [String]
         if (currentNoteId != -1){
-            let notes = userDefault.object(forKey: "notes") as! [String]
-            note.text = String(notes[currentNoteId])
+            note.text = String(dataText[currentNoteId])
         }
         
     }
