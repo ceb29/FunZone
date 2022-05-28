@@ -36,6 +36,12 @@ class NewNoteViewController: UIViewController {
         userDefault.set(dataText, forKey: "notes")
     }
     
+    @IBAction func deleteClicked(_ sender: Any) {
+        dataText.remove(at: currentNoteId)
+        userDefault.set(dataText, forKey: "notes")
+        currentNoteId = -1
+    }
+    
     func getCurrentText(){
         currentNoteId = userDefault.integer(forKey: "noteId")
         dataText = userDefault.object(forKey: "notes") as! [String]
