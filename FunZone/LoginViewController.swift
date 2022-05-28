@@ -6,14 +6,14 @@
 //
 
 import UIKit
-let userDefault = UserDefaults.standard
-class LoginViewController: UIViewController {
 
+class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        password.textContentType = .oneTimeCode
         // Do any additional setup after loading the view.
     }
 
@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
             print("Welcome user", userId)
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let welcomeScreen = storyBoard.instantiateViewController(withIdentifier: "Start")
-            //present(welcomeScreen, animated: true,  completion: nil)
             self.navigationController?.pushViewController(welcomeScreen, animated: true)
         }
         else{
