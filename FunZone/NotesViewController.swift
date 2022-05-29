@@ -64,9 +64,11 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty{
             searchActive = false
+            print("search inactive")
             searchResultDataText = dataText
         }
         else{
+            print("search active")
             searchActive = true
             searchResultsIndex = dataText.indices.filter {(i : Int) -> Bool in return dataText[i].lowercased().contains(searchText.lowercased())}
             print(searchResultsIndex)
@@ -91,7 +93,7 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let newNoteScreen = storyBoard.instantiateViewController(withIdentifier: "NewNote")
         self.navigationController?.pushViewController(newNoteScreen, animated: true)
-        print("test")
+        print("item selected")
     }
     
     
