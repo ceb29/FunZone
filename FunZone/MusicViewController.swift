@@ -7,22 +7,34 @@
 
 import UIKit
 
-class MusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var dataText = ["1", "2", "3", "4", "5"]
+class MusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+    @IBOutlet weak var musicTableView: UITableView!
+    var dataText = ["song1", "song2", "song3", "song4", "song5", "song6", "song7", "song8", "song9", "song10", "song11", "song12", "song13", "song14", "song15"]
+    var searchResults : [String] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataText.count
+        return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MusicTableViewCell
-        myCell.musicLabel.text = dataText[indexPath.row]
+        myCell.musicLabel.text = searchResults[indexPath.row]
         return myCell
     }
     
-
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty{
+            searchResults = dataText
+        }
+        else{
+            searchResults = dataText.filter {(str : String) -> Bool in return str.contains(searchText)}
+        }
+        musicTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchResults = dataText
 
         // Do any additional setup after loading the view.
     }
