@@ -15,6 +15,8 @@ class NewNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        note.layer.cornerRadius = 10
+        note.layer.masksToBounds = true
         getCurrentText()
         // Do any additional setup after loading the view.
     }
@@ -50,7 +52,8 @@ class NewNoteViewController: UIViewController {
         if (currentNoteId != -1){
             note.text = String(dataText[currentNoteId])
         }
-        
     }
+    
+    
     
 }
