@@ -26,6 +26,7 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         dataText = userDefault.object(forKey: "notes") as! [String]
+        searchActive = false
         searchResultDataText = dataText
         notesSearchBar.text = ""
         self.notesCollectionView.reloadData()
