@@ -33,7 +33,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
             SearchResultDataText = dataText
         }
         else{
-            SearchResultDataText = dataText.filter {(str : String) -> Bool in return str.contains(searchText.lowercased())}
+            SearchResultDataText = dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
         }
         booksCollectionView.reloadData()
     }

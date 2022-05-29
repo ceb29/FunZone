@@ -27,7 +27,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
             searchResultDataText = dataText
         }
         else{
-            searchResultDataText = dataText.filter {(str : String) -> Bool in return str.contains(searchText.lowercased())}
+            searchResultDataText = dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
         }
         musicTableView.reloadData()
     }
