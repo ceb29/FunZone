@@ -45,7 +45,7 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
             return myCell    
         default:
             myCell.noteLabel.text = dataText[indexPath.row - 1]
-            myCell.backgroundColor = UIColor.systemGray2
+            myCell.backgroundColor = UIColor.white
             myCell.noteLabel.textColor = UIColor.black
             myCell.layer.cornerRadius = 10
             myCell.layer.masksToBounds = true
