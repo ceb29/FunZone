@@ -85,6 +85,7 @@
                     <navigationItem key="navigationItem" id="HNv-T7-Kaj"/>
                     <connections>
                         <outlet property="password" destination="FEj-wC-FR8" id="Oq5-af-OyL"/>
+                        <outlet property="rememberSwitch" destination="aI5-rA-zdd" id="OAB-aH-fM7"/>
                         <outlet property="username" destination="gKi-m2-yfI" id="coE-ks-Npp"/>
                     </connections>
                 </viewController>
