@@ -13,6 +13,8 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
     let userDefault = UserDefaults.standard
     var dataText : [String] = []
     var searchResultDataText : [String] = []
+    var searchResultsIndex : [Int] = []
+    var searchActive = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,10 +62,14 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty{
+            searchActive = false
             searchResultDataText = dataText
         }
         else{
-            searchResultDataText = dataText.filter {(str : String) -> Bool in return str.contains(searchText.lowercased())}
+            searchActive = true
+            searchResultsIndex = dataText.indices.filter {(i : Int) -> Bool in return dataText[i].lowercased().contains(searchText.lowercased())}
+            print(searchResultsIndex)
+            searchResultDataText = dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
         }
         notesCollectionView.reloadData()
     }
@@ -73,7 +79,13 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
         case 0:
             userDefault.set(-1, forKey: "noteId")
         default:
-            userDefault.set(indexPath.row - 1, forKey: "noteId")
+            if searchActive{
+                userDefault.set(searchResultsIndex[indexPath.row - 1], forKey: "noteId")
+            }
+            else{
+                userDefault.set(indexPath.row - 1, forKey: "noteId")
+            }
+            
         }
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let newNoteScreen = storyBoard.instantiateViewController(withIdentifier: "NewNote")
