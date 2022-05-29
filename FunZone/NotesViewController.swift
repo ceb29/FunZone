@@ -7,25 +7,30 @@
 
 import UIKit
 
-class NotesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class NotesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var notesCollectionView: UICollectionView!
+    @IBOutlet weak var notesSearchBar: UISearchBar!
     let userDefault = UserDefaults.standard
     var dataText : [String] = []
+    var searchResultDataText : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNotes()
         dataText = userDefault.object(forKey: "notes") as! [String]
+        searchResultDataText = dataText
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         dataText = userDefault.object(forKey: "notes") as! [String]
+        searchResultDataText = dataText
+        notesSearchBar.text = ""
         self.notesCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var total = dataText.count + 1
+        let total = searchResultDataText.count + 1
         return total
     }
     
@@ -44,13 +49,23 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
             myCell.layer.masksToBounds = true
             return myCell    
         default:
-            myCell.noteLabel.text = dataText[indexPath.row - 1]
+            myCell.noteLabel.text = searchResultDataText[indexPath.row - 1]
             myCell.backgroundColor = UIColor.white
             myCell.noteLabel.textColor = UIColor.black
             myCell.layer.cornerRadius = 10
             myCell.layer.masksToBounds = true
             return myCell
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty{
+            searchResultDataText = dataText
+        }
+        else{
+            searchResultDataText = dataText.filter {(str : String) -> Bool in return str.contains(searchText.lowercased())}
+        }
+        notesCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
