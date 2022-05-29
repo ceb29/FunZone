@@ -38,7 +38,7 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
         switch indexPath.item{
         case 0:
             myCell.noteLabel.text = "New Note\n+"
-            myCell.backgroundColor = UIColor.black
+            myCell.backgroundColor = UIColor.systemGray
             myCell.noteLabel.textColor = UIColor.white
             myCell.layer.cornerRadius = 10
             myCell.layer.masksToBounds = true
