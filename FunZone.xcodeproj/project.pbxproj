@@ -94,6 +94,8 @@
 		84300EAD283ED68000748D9E /* FunZone */ = {
 			isa = PBXGroup;
 			children = (
+				8452B67A28480CEF0049A9E8 /* Music */,
+				8452B638284802C50049A9E8 /* Books */,
 				84300EAE283ED68000748D9E /* AppDelegate.swift */,
 				84300EB0283ED68000748D9E /* SceneDelegate.swift */,
 				84300EB2283ED68000748D9E /* ViewController.swift */,
@@ -116,6 +118,20 @@
 				845058812847AC000011A5E0 /* DBhelperUsers.swift */,
 			);
 			path = FunZone;
+			sourceTree = "<group>";
+		};
+		8452B638284802C50049A9E8 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
+		8452B67A28480CEF0049A9E8 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
