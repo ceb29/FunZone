@@ -9,18 +9,26 @@ import UIKit
 
 class BooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
     @IBOutlet weak var booksCollectionView: UICollectionView!
-    var dataText = ["book1", "book2", "book3", "book4", "book5", "book6", "book7", "book8", "book9", "book10", "book11", "book12", "book13", "book14", "book15"]
-    var dataImg = ["img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1"]
-    var SearchResultDataText : [String] = []
-    var SearchResultDataImg : [String] = []
+    var dataText = ["sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample"]
+    //var dataImg = ["img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1"]
+    var searchResultDataText : [String] = []
+    var searchResultDataImg : [String] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchResultDataText = dataText
+        //searchResultDataImg = dataImg
+        
+        // Do any additional setup after loading the view.
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return SearchResultDataText.count
+        return searchResultDataText.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BooksCollectionViewCell
-        myCell.bookLabel.text = SearchResultDataText[indexPath.row]
+        myCell.bookLabel.text = searchResultDataText[indexPath.row]
         //myCell.bookImg.image = UIImage(named: dataImg[indexPath.row])
         myCell.backgroundColor = UIColor.gray
         myCell.layer.cornerRadius = 10
@@ -30,20 +38,19 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty{
-            SearchResultDataText = dataText
+            searchResultDataText = dataText
         }
         else{
-            SearchResultDataText = dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
+            searchResultDataText = dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
         }
         booksCollectionView.reloadData()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        SearchResultDataText = dataText
-        SearchResultDataImg = dataImg
-        
-        // Do any additional setup after loading the view.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyObject = UIStoryboard(name: "Main", bundle: nil)
+        let bookScreenVc = storyObject.instantiateViewController(withIdentifier: "BookViewer") as! OpenedBookViewController
+        bookScreenVc.pdfname = searchResultDataText[indexPath.item]
+        self.navigationController?.pushViewController(bookScreenVc, animated: true)
     }
 
 }

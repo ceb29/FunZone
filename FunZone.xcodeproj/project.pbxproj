@@ -18,6 +18,8 @@
 		84300EBB283ED68200748D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84300EBA283ED68200748D9E /* Assets.xcassets */; };
 		84300EBE283ED68200748D9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84300EBC283ED68200748D9E /* LaunchScreen.storyboard */; };
 		845058822847AC000011A5E0 /* DBhelperUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845058812847AC000011A5E0 /* DBhelperUsers.swift */; };
+		8452B69F284813A70049A9E8 /* OpenedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452B69E284813A70049A9E8 /* OpenedBookViewController.swift */; };
+		8452B6A3284815F40049A9E8 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8452B6A2284815F40049A9E8 /* sample.pdf */; };
 		8474BE932846D57100B2A930 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE8F2846D57100B2A930 /* Note+CoreDataClass.swift */; };
 		8474BE942846D57100B2A930 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE902846D57100B2A930 /* Note+CoreDataProperties.swift */; };
 		8474BE952846D57100B2A930 /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE912846D57100B2A930 /* Users+CoreDataClass.swift */; };
@@ -46,6 +48,8 @@
 		84300EBD283ED68200748D9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84300EBF283ED68200748D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845058812847AC000011A5E0 /* DBhelperUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBhelperUsers.swift; sourceTree = "<group>"; };
+		8452B69E284813A70049A9E8 /* OpenedBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenedBookViewController.swift; sourceTree = "<group>"; };
+		8452B6A2284815F40049A9E8 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = sample.pdf; path = ../../../../../sample.pdf; sourceTree = "<group>"; };
 		8474BE8F2846D57100B2A930 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8474BE902846D57100B2A930 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8474BE912846D57100B2A930 /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				8415A110284013D2008D1863 /* SignUpViewController.swift */,
 				84BB8055284015E40097A90E /* MusicViewController.swift */,
 				84BB8051284014EF0097A90E /* BooksViewController.swift */,
+				8452B69E284813A70049A9E8 /* OpenedBookViewController.swift */,
 				8415A11428401430008D1863 /* SearchViewController.swift */,
 				8415A1122840141E008D1863 /* NotesViewController.swift */,
 				84CEA85E28428E230078DCB1 /* NewNoteViewController.swift */,
@@ -123,6 +128,7 @@
 		8452B638284802C50049A9E8 /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				8452B6A2284815F40049A9E8 /* sample.pdf */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -192,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8452B6A3284815F40049A9E8 /* sample.pdf in Resources */,
 				84300EBE283ED68200748D9E /* LaunchScreen.storyboard in Resources */,
 				84300EBB283ED68200748D9E /* Assets.xcassets in Resources */,
 				84300EB6283ED68000748D9E /* Main.storyboard in Resources */,
@@ -223,6 +230,7 @@
 				8474BE932846D57100B2A930 /* Note+CoreDataClass.swift in Sources */,
 				8474BE952846D57100B2A930 /* Users+CoreDataClass.swift in Sources */,
 				8415A111284013D2008D1863 /* SignUpViewController.swift in Sources */,
+				8452B69F284813A70049A9E8 /* OpenedBookViewController.swift in Sources */,
 				8474BE982846D5C900B2A930 /* DBHelperNotes.swift in Sources */,
 				84BB8054284015BB0097A90E /* MusicTableViewCell.swift in Sources */,
 			);

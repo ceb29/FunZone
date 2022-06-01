@@ -353,6 +353,35 @@
             </objects>
             <point key="canvasLocation" x="4440.579710144928" y="69.642857142857139"/>
         </scene>
+        <!--Opened Book View Controller-->
+        <scene sceneID="elz-cp-XAH">
+            <objects>
+                <viewController storyboardIdentifier="BookViewer" id="3K5-5d-aCn" customClass="OpenedBookViewController" customModule="FunZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gim-uy-E87">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXT-xK-F0c">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5PZ-oH-2sL">
+                                <rect key="frame" x="0.0" y="33" width="414" height="815"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MbL-Xw-k7W"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="bookView" destination="5PZ-oH-2sL" id="fOR-wR-dFP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQd-TI-pSN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4440.579710144928" y="740.625"/>
+        </scene>
         <!--search-->
         <scene sceneID="LpN-Cd-jzO">
             <objects>
@@ -544,7 +573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9Q-gR-xs4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6050.7246376811599" y="765.40178571428567"/>
+            <point key="canvasLocation" x="6051" y="741"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7lQ-QC-WIN">
