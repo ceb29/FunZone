@@ -17,6 +17,7 @@
 		84300EB9283ED68000748D9E /* FunZone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84300EB7283ED68000748D9E /* FunZone.xcdatamodeld */; };
 		84300EBB283ED68200748D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84300EBA283ED68200748D9E /* Assets.xcassets */; };
 		84300EBE283ED68200748D9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84300EBC283ED68200748D9E /* LaunchScreen.storyboard */; };
+		845058822847AC000011A5E0 /* DBhelperUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845058812847AC000011A5E0 /* DBhelperUsers.swift */; };
 		8474BE932846D57100B2A930 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE8F2846D57100B2A930 /* Note+CoreDataClass.swift */; };
 		8474BE942846D57100B2A930 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE902846D57100B2A930 /* Note+CoreDataProperties.swift */; };
 		8474BE952846D57100B2A930 /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE912846D57100B2A930 /* Users+CoreDataClass.swift */; };
@@ -44,6 +45,7 @@
 		84300EBA283ED68200748D9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84300EBD283ED68200748D9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84300EBF283ED68200748D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845058812847AC000011A5E0 /* DBhelperUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBhelperUsers.swift; sourceTree = "<group>"; };
 		8474BE8F2846D57100B2A930 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8474BE902846D57100B2A930 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8474BE912846D57100B2A930 /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				84BB8057284016200097A90E /* BooksCollectionViewCell.swift */,
 				84CEA860284294A50078DCB1 /* NoteCollectionViewCell.swift */,
 				8474BE972846D5C900B2A930 /* DBHelperNotes.swift */,
+				845058812847AC000011A5E0 /* DBhelperUsers.swift */,
 			);
 			path = FunZone;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				84300EAF283ED68000748D9E /* AppDelegate.swift in Sources */,
 				84BB8056284015E40097A90E /* MusicViewController.swift in Sources */,
 				84300EB1283ED68000748D9E /* SceneDelegate.swift in Sources */,
+				845058822847AC000011A5E0 /* DBhelperUsers.swift in Sources */,
 				8474BE932846D57100B2A930 /* Note+CoreDataClass.swift in Sources */,
 				8474BE952846D57100B2A930 /* Users+CoreDataClass.swift in Sources */,
 				8415A111284013D2008D1863 /* SignUpViewController.swift in Sources */,

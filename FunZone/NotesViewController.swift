@@ -78,8 +78,8 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
         else{
             print("search active")
             searchActive = true
-            searchResultsIndex = dataText.indices.filter {(i : Int) -> Bool in return dataText[i].lowercased().contains(searchText.lowercased())}
-            print(searchResultsIndex)
+            //searchResultsIndex = dataText.indices.filter {(i : Int) -> Bool in return dataText[i].lowercased().contains(searchText.lowercased())}
+            //print(searchResultsIndex)
             searchResultDataText = dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
         }
         notesCollectionView.reloadData()
@@ -93,10 +93,10 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
         default:
             userDefault.set(false, forKey: "newNote")
             if searchActive{
-                userDefault.set(dataText[searchResultsIndex[indexPath.row - 1]], forKey: "noteTitle")
+                userDefault.set(searchResultDataText[indexPath.row - 1], forKey: "noteTitle")
             }
             else{
-                userDefault.set(dataText[indexPath.row - 1], forKey: "noteTitle")
+                userDefault.set(searchResultDataText[indexPath.row - 1], forKey: "noteTitle")
             }
             //print(1)
         }

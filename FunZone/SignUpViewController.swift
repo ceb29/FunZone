@@ -8,22 +8,26 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func submitButton(_ sender: Any) {
+        if username.text != nil && password.text != nil{
+            DBHelperUsers.dbHelper.addUserData(usernameValue: username.text!, passwordValue: password.text!)
+            goToLogin()
+        }
     }
-    */
-
+    
+    func goToLogin(){
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let welcomeScreen = storyBoard.instantiateViewController(withIdentifier: "Login")
+        //present(welcomeScreen, animated: true,  completion: nil)
+        self.navigationController?.pushViewController(welcomeScreen, animated: true)
+    }
 }

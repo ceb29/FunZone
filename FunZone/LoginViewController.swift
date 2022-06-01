@@ -25,21 +25,37 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func submitClicked(_ sender: Any) {
-        let userId = username.text!
-        let pass = password.text!
+        if username.text != nil && password.text != nil{
+            checkUser()
+        }
         
-        if(userId == "abc" && pass == "123"){
-            //if userId and password are valid
-            saveUser()
-            print("Welcome user", userId)
-            goToWelcome()
-        }
-        else{
-            print("Invalid userId")
-        }
+        
     }
     
-    func goToWelcome(){
+    func checkUser(){
+        let userId = username.text!
+        let pass = password.text!
+        var data = DBHelperUsers.dbHelper.getOneUserData(username: userId)
+        if data.userFlag{
+            var correctPassword = data.userData.password!
+            if(pass == correctPassword){
+                //if userId and password are valid
+                saveUser()
+                print("Welcome user", userId)
+                goToMusic()
+            }
+            else{
+                print("Invalid password")
+            }
+        }
+        else{
+            print("Invalid username")
+        }
+        
+        
+    }
+    
+    func goToMusic(){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let welcomeScreen = storyBoard.instantiateViewController(withIdentifier: "Start")
         //present(welcomeScreen, animated: true,  completion: nil)
