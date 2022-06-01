@@ -40,8 +40,9 @@ class DBHelperNotes{
         return note
     }
     
-    func getOneNoteData(title : String) -> Note{
+    func getOneNoteData(title : String) -> (noteData : Note, noteFlag : Bool){
         var note = Note()
+        var noteExists = true
         var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         fetchRequest.predicate = NSPredicate(format: "title == %@", title)
         fetchRequest.fetchLimit = 1
@@ -49,15 +50,17 @@ class DBHelperNotes{
             let request = try context?.fetch(fetchRequest) as! [Note]
             if request.count != 0{
                 note = request.first as! Note
+                noteExists = true
             }
             else{
                 print("data not found")
+                noteExists = false
             }
         }
         catch{
             print("error")
         }
-        return note
+        return (note, noteExists)
     }
     
     

@@ -395,7 +395,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ajM-Gw-2yp">
-                                <rect key="frame" x="20" y="164" width="374" height="638"/>
+                                <rect key="frame" x="20" y="187" width="374" height="615"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="PW2-Qh-mw1">
@@ -514,6 +514,13 @@
                                 <rect key="frame" x="326" y="110" width="19" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7Z-p2-aTc">
+                                <rect key="frame" x="88" y="57" width="238" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W0p-q6-bhf"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -522,6 +529,7 @@
                         <outlet property="deleteCheckmark" destination="moS-Za-pWz" id="YKf-IQ-5Jz"/>
                         <outlet property="noteContent" destination="9zN-XP-WWC" id="yO9-xJ-Odc"/>
                         <outlet property="noteTitle" destination="hIz-2k-2cL" id="hYs-38-GaZ"/>
+                        <outlet property="resultLabel" destination="z7Z-p2-aTc" id="5v3-fq-Wzc"/>
                         <outlet property="saveCheckmark" destination="cOb-9M-uCa" id="qOe-Kx-w2V"/>
                     </connections>
                 </viewController>
