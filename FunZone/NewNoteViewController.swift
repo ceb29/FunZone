@@ -9,6 +9,8 @@ import UIKit
 
 class NewNoteViewController: UIViewController {
     let userDefault = UserDefaults.standard
+    @IBOutlet weak var saveCheckmark: UIImageView!
+    @IBOutlet weak var deleteCheckmark: UIImageView!
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteContent: UITextView!
     var newNoteStatus = true
@@ -27,6 +29,7 @@ class NewNoteViewController: UIViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
+        saveCheckmark.isHidden = false
         if currentTitle != noteTitle.text!{
             newNoteStatus = true
         }
@@ -44,13 +47,15 @@ class NewNoteViewController: UIViewController {
     
     @IBAction func deleteClicked(_ sender: Any) {
         if !newNoteStatus{
+            newNoteStatus = true
+            deleteCheckmark.isHidden = false
             DBHelperNotes.dbHelper.deleteData(title: currentTitle)
         }
     }
     
     func getCurrentText(){
         newNoteStatus = userDefault.bool(forKey: "newNote")
-        print(newNoteStatus)
+        //print(newNoteStatus)
         if !newNoteStatus{
             currentTitle = userDefault.string(forKey: "noteTitle")!
             let noteData = DBHelperNotes.dbHelper.getOneNoteData(title:  currentTitle)

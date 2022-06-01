@@ -89,7 +89,7 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
         switch indexPath.item{
         case 0:
             userDefault.set(true, forKey: "newNote")
-            print(0)
+            //print(0)
         default:
             userDefault.set(false, forKey: "newNote")
             if searchActive{
@@ -98,12 +98,12 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
             else{
                 userDefault.set(dataText[indexPath.row - 1], forKey: "noteTitle")
             }
-            print(1)
+            //print(1)
         }
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let newNoteScreen = storyBoard.instantiateViewController(withIdentifier: "NewNote")
         self.navigationController?.pushViewController(newNoteScreen, animated: true)
-        print("item selected")
+       //print("item selected")
     }
     
 }
