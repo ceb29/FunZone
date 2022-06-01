@@ -18,18 +18,26 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNotes()
-        dataText = userDefault.object(forKey: "notes") as! [String]
+        dataText = getTitles()
         searchResultDataText = dataText
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        dataText = userDefault.object(forKey: "notes") as! [String]
+        dataText = getTitles()
         searchActive = false
         searchResultDataText = dataText
         notesSearchBar.text = ""
         self.notesCollectionView.reloadData()
+    }
+    
+    func getTitles() -> [String]{
+        var titles : [String] = []
+        let notesData = DBHelperNotes.dbHelper.getNoteData()
+        for data in notesData{
+            titles.append(data.title!)
+        }
+        return titles
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -80,29 +88,22 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.item{
         case 0:
-            userDefault.set(-1, forKey: "noteId")
+            userDefault.set(true, forKey: "newNote")
+            print(0)
         default:
+            userDefault.set(false, forKey: "newNote")
             if searchActive{
-                userDefault.set(searchResultsIndex[indexPath.row - 1], forKey: "noteId")
+                userDefault.set(dataText[searchResultsIndex[indexPath.row - 1]], forKey: "noteTitle")
             }
             else{
-                userDefault.set(indexPath.row - 1, forKey: "noteId")
+                userDefault.set(dataText[indexPath.row - 1], forKey: "noteTitle")
             }
-            
+            print(1)
         }
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let newNoteScreen = storyBoard.instantiateViewController(withIdentifier: "NewNote")
         self.navigationController?.pushViewController(newNoteScreen, animated: true)
         print("item selected")
     }
-    
-    
-    func setupNotes(){
-        if userDefault.object(forKey: "notes") == nil{
-            let notes : [String] = []
-            userDefault.set(notes, forKey: "notes")
-        }
-    }
-    
     
 }

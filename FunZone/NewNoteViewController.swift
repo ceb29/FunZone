@@ -9,16 +9,16 @@ import UIKit
 
 class NewNoteViewController: UIViewController {
     let userDefault = UserDefaults.standard
-    @IBOutlet weak var note: UITextView!
-    var dataText : [String] = []
-    var currentNoteId = 0
+    @IBOutlet weak var noteTitle: UITextField!
+    @IBOutlet weak var noteContent: UITextView!
+    var newNoteStatus = true
+    var currentTitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        note.layer.cornerRadius = 10
-        note.layer.masksToBounds = true
-        getCurrentText()
-        // Do any additional setup after loading the view.
+        noteContent.layer.cornerRadius = 10
+        noteContent.layer.masksToBounds = true
+        //getCurrentText()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,33 +27,36 @@ class NewNoteViewController: UIViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
-        if(currentNoteId == -1){
-            dataText.append(note.text)
-            currentNoteId = dataText.count - 1 //create new note and save into new notes id
+        if currentTitle != noteTitle.text!{
+            newNoteStatus = true
+        }
+        if newNoteStatus{
+            DBHelperNotes.dbHelper.addNoteData(titleValue: noteTitle.text!, contentValue: noteContent.text!)
+            newNoteStatus = false
+             //create new note and save into new notes id
+            print("saveNew")
         }
         else{
-            dataText[currentNoteId] = note.text
+            DBHelperNotes.dbHelper.updateNoteData(title: noteTitle.text!, content: noteContent.text!)
+            print("saveUpdate")
         }
-        
-        userDefault.set(dataText, forKey: "notes")
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
-        if currentNoteId != -1{
-            dataText.remove(at: currentNoteId)
-            userDefault.set(dataText, forKey: "notes")
-            currentNoteId = -1
+        if !newNoteStatus{
+            DBHelperNotes.dbHelper.deleteData(title: currentTitle)
         }
     }
     
     func getCurrentText(){
-        currentNoteId = userDefault.integer(forKey: "noteId")
-        dataText = userDefault.object(forKey: "notes") as! [String]
-        if (currentNoteId != -1){
-            note.text = String(dataText[currentNoteId])
+        newNoteStatus = userDefault.bool(forKey: "newNote")
+        print(newNoteStatus)
+        if !newNoteStatus{
+            currentTitle = userDefault.string(forKey: "noteTitle")!
+            let noteData = DBHelperNotes.dbHelper.getOneNoteData(title:  currentTitle)
+            noteTitle.text = currentTitle
+            noteContent.text = noteData.content!
         }
     }
-    
-    
     
 }
