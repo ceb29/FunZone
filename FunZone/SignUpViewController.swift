@@ -11,6 +11,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var resultLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,9 +20,19 @@ class SignUpViewController: UIViewController {
     
     @IBAction func submitButton(_ sender: Any) {
         if username.text != nil && password.text != nil{
-            DBHelperUsers.dbHelper.addUserData(usernameValue: username.text!, passwordValue: password.text!)
-            goToLogin()
+            let data = DBHelperUsers.dbHelper.getOneUserData(username: username.text!)
+            if data.userFlag{
+                resultLabel.text = "Username Already Exists"
+            }
+            else{
+                saveUser()
+            }
         }
+    }
+
+    func saveUser(){
+        DBHelperUsers.dbHelper.addUserData(usernameValue: username.text!, passwordValue: password.text!)
+        goToLogin()
     }
     
     func goToLogin(){

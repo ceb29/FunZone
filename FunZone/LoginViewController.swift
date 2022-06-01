@@ -11,6 +11,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var rememberSwitch: UISwitch!
+    @IBOutlet weak var resultLabel: UILabel!
     let userDefault = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -33,23 +34,21 @@ class LoginViewController: UIViewController {
     }
     
     func checkUser(){
-        let userId = username.text!
-        let pass = password.text!
-        var data = DBHelperUsers.dbHelper.getOneUserData(username: userId)
+        let data = DBHelperUsers.dbHelper.getOneUserData(username: username.text!)
         if data.userFlag{
-            var correctPassword = data.userData.password!
-            if(pass == correctPassword){
+            let correctPassword = data.userData.password!
+            if(password.text! == correctPassword){
                 //if userId and password are valid
                 saveUser()
-                print("Welcome user", userId)
+                print("Welcome user", username.text)
                 goToMusic()
             }
             else{
-                print("Invalid password")
+                resultLabel.text = "Invalid Password"
             }
         }
         else{
-            print("Invalid username")
+            resultLabel.text = "Invalid Username"
         }
         
         
