@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //load username and password if remember me was selected last time
         let rememberFlag = userDefault.integer(forKey: "rememberFlag")
         let remUser = userDefault.string(forKey: "username")
         if rememberFlag == 1{
@@ -29,19 +30,17 @@ class LoginViewController: UIViewController {
         if username.text != nil && password.text != nil{
             checkUser()
         }
-        
-        
     }
     
     func checkUser(){
-        let data = DBHelperUsers.dbHelper.getOneUserData(username: username.text!)
-        if data.userFlag{
+        let data = DBHelperUsers.dbHelper.getOneUserData(username: username.text!) //get user data for current username text
+    
+        if data.userFlag{ //check if user exists
             let correctPassword = data.userData.password!
-            if(password.text! == correctPassword){
-                //if userId and password are valid
-                saveUser()
+            if(password.text! == correctPassword){ //check if userId and password are valid
+                saveUser() //method for handling remember me
                 print("Welcome user", username.text)
-                goToMusic()
+                goToMusic() //load next screen
             }
             else{
                 resultLabel.text = "Invalid Password"
@@ -50,11 +49,10 @@ class LoginViewController: UIViewController {
         else{
             resultLabel.text = "Invalid Username"
         }
-        
-        
     }
     
     func goToMusic(){
+        //go to next screen after login is successful
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let welcomeScreen = storyBoard.instantiateViewController(withIdentifier: "Start")
         //present(welcomeScreen, animated: true,  completion: nil)
