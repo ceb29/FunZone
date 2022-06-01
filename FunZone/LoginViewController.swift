@@ -54,9 +54,9 @@ class LoginViewController: UIViewController {
     func goToMusic(){
         //go to next screen after login is successful
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let welcomeScreen = storyBoard.instantiateViewController(withIdentifier: "Start")
+        let startScreen = storyBoard.instantiateViewController(withIdentifier: "Start")
         //present(welcomeScreen, animated: true,  completion: nil)
-        self.navigationController?.pushViewController(welcomeScreen, animated: true)
+        self.navigationController?.pushViewController(startScreen, animated: true)
     }
     
     func saveUser(){
@@ -80,9 +80,9 @@ extension LoginViewController{
         if SecItemAdd(attribute as CFDictionary, nil) == noErr{
             print("data saved successfully")
         }
-        else{
-            print("error during save")
-        }
+        //else{
+            //print("error during save")
+        //}
     }
     
     func getKey(_ username : String) -> [String] {
