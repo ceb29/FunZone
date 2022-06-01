@@ -10,8 +10,8 @@ import UIKit
 class SignUpViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-    
     @IBOutlet weak var resultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,16 +20,38 @@ class SignUpViewController: UIViewController {
     
     @IBAction func submitButton(_ sender: Any) {
         if username.text != nil && password.text != nil{
-            let data = DBHelperUsers.dbHelper.getOneUserData(username: username.text!)
-            if data.userFlag{
-                resultLabel.text = "Username Already Exists"
-            }
-            else{
+            if isUniqueUser() && isValidUsernamePassword(){
                 saveUser()
             }
         }
     }
-
+    
+    func isUniqueUser() -> Bool{
+        let data = DBHelperUsers.dbHelper.getOneUserData(username: username.text!)
+        if data.userFlag{
+            resultLabel.text = "That username already exists."
+            return false
+        }
+        else{
+            return true
+        }
+    }
+    
+    func isValidUsernamePassword() -> Bool{
+        if isValidText(text: username.text!) && isValidText(text: password.text!){
+            return true
+        }
+        resultLabel.text = "The username and password cannot have spaces or be blank."
+        return false
+    }
+    
+    func isValidText(text : String) -> Bool{
+        if text.contains(" ") || text == ""{
+            return false
+        }
+        return true
+    }
+    
     func saveUser(){
         DBHelperUsers.dbHelper.addUserData(usernameValue: username.text!, passwordValue: password.text!)
         goToLogin()
