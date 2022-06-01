@@ -13,6 +13,7 @@ class NewNoteViewController: UIViewController {
     @IBOutlet weak var deleteCheckmark: UIImageView!
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteContent: UITextView!
+    @IBOutlet weak var resultLabel: UILabel!
     var newNoteStatus = true
     var currentTitle = ""
     
@@ -29,19 +30,29 @@ class NewNoteViewController: UIViewController {
     }
     
     @IBAction func saveClicked(_ sender: Any) {
-        saveCheckmark.isHidden = false
         if currentTitle != noteTitle.text!{
             newNoteStatus = true
         }
         if newNoteStatus{
-            DBHelperNotes.dbHelper.addNoteData(titleValue: noteTitle.text!, contentValue: noteContent.text!)
-            newNoteStatus = false
-             //create new note and save into new notes id
-            print("saveNew")
+            let note = DBHelperNotes.dbHelper.getOneNoteData(title: noteTitle.text!)
+            if note.noteFlag{ //note with title already exists
+                print("note title already exists")
+                resultLabel.text = "Title Already Exists"
+            }
+            else{
+                DBHelperNotes.dbHelper.addNoteData(titleValue: noteTitle.text!, contentValue: noteContent.text!)
+                newNoteStatus = false
+                 //create new note and save into new notes id
+                print("saveNew")
+                print(note.noteFlag)
+                saveCheckmark.isHidden = false
+            }
+            
         }
         else{
             DBHelperNotes.dbHelper.updateNoteData(title: noteTitle.text!, content: noteContent.text!)
             print("saveUpdate")
+            saveCheckmark.isHidden = false
         }
     }
     
@@ -58,9 +69,9 @@ class NewNoteViewController: UIViewController {
         //print(newNoteStatus)
         if !newNoteStatus{
             currentTitle = userDefault.string(forKey: "noteTitle")!
-            let noteData = DBHelperNotes.dbHelper.getOneNoteData(title:  currentTitle)
+            let note = DBHelperNotes.dbHelper.getOneNoteData(title:  currentTitle)
             noteTitle.text = currentTitle
-            noteContent.text = noteData.content!
+            noteContent.text = note.noteData.content!
         }
     }
     
