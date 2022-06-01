@@ -8,7 +8,6 @@
 import UIKit
 
 class NewNoteViewController: UIViewController {
-    let userDefault = UserDefaults.standard
     @IBOutlet weak var saveCheckmark: UIImageView!
     @IBOutlet weak var deleteCheckmark: UIImageView!
     @IBOutlet weak var noteTitle: UITextField!
@@ -65,10 +64,7 @@ class NewNoteViewController: UIViewController {
     }
     
     func getCurrentText(){
-        newNoteStatus = userDefault.bool(forKey: "newNote")
-        //print(newNoteStatus)
         if !newNoteStatus{
-            currentTitle = userDefault.string(forKey: "noteTitle")!
             let note = DBHelperNotes.dbHelper.getOneNoteData(title:  currentTitle)
             noteTitle.text = currentTitle
             noteContent.text = note.noteData.content!

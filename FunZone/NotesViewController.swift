@@ -10,7 +10,6 @@ import UIKit
 class NotesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var notesCollectionView: UICollectionView!
     @IBOutlet weak var notesSearchBar: UISearchBar!
-    let userDefault = UserDefaults.standard
     var dataText : [String] = []
     var searchResultDataText : [String] = []
     var searchResultsIndex : [Int] = []
@@ -86,22 +85,22 @@ class NotesViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var newNoteStatus = true
+        var titleToPass = ""
         switch indexPath.item{
         case 0:
-            userDefault.set(true, forKey: "newNote")
+            newNoteStatus = true
             //print(0)
         default:
-            userDefault.set(false, forKey: "newNote")
-            if searchActive{
-                userDefault.set(searchResultDataText[indexPath.row - 1], forKey: "noteTitle")
-            }
-            else{
-                userDefault.set(searchResultDataText[indexPath.row - 1], forKey: "noteTitle")
-            }
+            newNoteStatus = false
+            titleToPass = searchResultDataText[indexPath.row - 1]
             //print(1)
         }
+        //need to add
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let newNoteScreen = storyBoard.instantiateViewController(withIdentifier: "NewNote")
+        let newNoteScreen = storyBoard.instantiateViewController(withIdentifier: "NewNote") as! NewNoteViewController
+        newNoteScreen.newNoteStatus = newNoteStatus
+        newNoteScreen.currentTitle = titleToPass
         self.navigationController?.pushViewController(newNoteScreen, animated: true)
        //print("item selected")
     }
