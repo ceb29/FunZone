@@ -550,6 +550,27 @@
             </objects>
             <point key="canvasLocation" x="6050.7246376811599" y="69.642857142857139"/>
         </scene>
+        <!--Search Started View Controller-->
+        <scene sceneID="Ukf-zk-DQB">
+            <objects>
+                <viewController storyboardIdentifier="SearchStart" id="8ng-kU-ZNw" customClass="SearchStartedViewController" customModule="FunZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tys-oC-zAL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GV7-Rx-FLl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GeY-M4-SzS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNE-x1-7dG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5271" y="741"/>
+        </scene>
         <!--New Note View Controller-->
         <scene sceneID="G23-F7-l3B">
             <objects>

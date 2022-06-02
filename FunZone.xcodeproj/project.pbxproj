@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840EA09728486DFF0079CAF1 /* SearchStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EA09628486DFF0079CAF1 /* SearchStartedViewController.swift */; };
 		8415A111284013D2008D1863 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415A110284013D2008D1863 /* SignUpViewController.swift */; };
 		8415A1132840141E008D1863 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415A1122840141E008D1863 /* NotesViewController.swift */; };
 		8415A11528401430008D1863 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415A11428401430008D1863 /* SearchViewController.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840EA09628486DFF0079CAF1 /* SearchStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStartedViewController.swift; sourceTree = "<group>"; };
 		8415A110284013D2008D1863 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8415A1122840141E008D1863 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		8415A11428401430008D1863 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				84BB8051284014EF0097A90E /* BooksViewController.swift */,
 				8452B69E284813A70049A9E8 /* OpenedBookViewController.swift */,
 				8415A11428401430008D1863 /* SearchViewController.swift */,
+				840EA09628486DFF0079CAF1 /* SearchStartedViewController.swift */,
 				8415A1122840141E008D1863 /* NotesViewController.swift */,
 				84CEA85E28428E230078DCB1 /* NewNoteViewController.swift */,
 				84BB8053284015BB0097A90E /* MusicTableViewCell.swift */,
@@ -349,6 +352,7 @@
 				8474BE962846D57100B2A930 /* Users+CoreDataProperties.swift in Sources */,
 				84300EAF283ED68000748D9E /* AppDelegate.swift in Sources */,
 				84BB8056284015E40097A90E /* MusicViewController.swift in Sources */,
+				840EA09728486DFF0079CAF1 /* SearchStartedViewController.swift in Sources */,
 				84300EB1283ED68000748D9E /* SceneDelegate.swift in Sources */,
 				845058822847AC000011A5E0 /* DBhelperUsers.swift in Sources */,
 				8474BE932846D57100B2A930 /* Note+CoreDataClass.swift in Sources */,

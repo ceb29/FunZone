@@ -6,20 +6,16 @@
 //
 
 import UIKit
-import WebKit
 
 class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     
     @IBAction func startClicked(_ sender: Any) {
-        var webKitView = WKWebView()
-        let newURL = URL(string : "https://www.google.com/")
-        webKitView.load(URLRequest(url: newURL!))
-        view = webKitView
+        let storyObject = UIStoryboard(name: "Main", bundle: nil)
+        let searchStartedScreen = storyObject.instantiateViewController(withIdentifier: "SearchStart") as! SearchStartedViewController
+        self.navigationController?.pushViewController(searchStartedScreen, animated: true)
     }
 }
