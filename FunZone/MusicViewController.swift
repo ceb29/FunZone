@@ -14,8 +14,14 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     var musicPlayer : AVAudioPlayer?
     var musicFile : String?
     var currentSong = ""
-    var dataText = ["song1", "song2", "song3", "song4", "song5", "song6", "song7", "song8", "song9", "song10", "song11", "song12", "song13", "song14", "song15"]
+    var dataText = ["bensound-afterlight", "bensound-allthewayup", "bensound-autoreverse", "bensound-awaken", "bensound-brave", "bensound-dontforget", "bensound-dontlookbehind", "bensound-floating", "bensound-funkhouse", "bensound-gravity", "bensound-lifeiswonderful", "bensound-longroad", "bensound-takingcare", "bensound-wonderfulworld", "bensound-worldonfire"]
     var searchResultDataText : [String] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupMusicPlayer()
+        searchResultDataText = dataText
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultDataText.count
@@ -43,7 +49,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func setupMusicPlayer(){
-        let filePath = Bundle.main.path(forResource: "sample", ofType: "mp3")
+        let filePath = Bundle.main.path(forResource: currentSong, ofType: "mp3")
         let url = URL(fileURLWithPath: filePath!)
         do{
             musicPlayer = try AVAudioPlayer(contentsOf: url)
@@ -54,21 +60,13 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func playMusic(_ sender: Any) {
-        musicPlayer?.stop()
-        print("music stopped playing")
-    }
-    
-    @IBAction func stopMusic(_ sender: Any) {
-        musicFile = "sol"
         musicPlayer?.play()
         print("music is playing")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        searchResultDataText = dataText
-
-        // Do any additional setup after loading the view.
+    @IBAction func stopMusic(_ sender: Any) {
+        musicPlayer?.stop()
+        print("music stopped playing")
     }
-
+    
 }

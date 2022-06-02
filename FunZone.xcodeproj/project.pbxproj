@@ -19,12 +19,42 @@
 		84300EBE283ED68200748D9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84300EBC283ED68200748D9E /* LaunchScreen.storyboard */; };
 		845058822847AC000011A5E0 /* DBhelperUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845058812847AC000011A5E0 /* DBhelperUsers.swift */; };
 		8452B69F284813A70049A9E8 /* OpenedBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452B69E284813A70049A9E8 /* OpenedBookViewController.swift */; };
-		8452B6A3284815F40049A9E8 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8452B6A2284815F40049A9E8 /* sample.pdf */; };
+		8452B6A3284815F40049A9E8 /* Xcode Overview.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8452B6A2284815F40049A9E8 /* Xcode Overview.pdf */; };
 		8474BE932846D57100B2A930 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE8F2846D57100B2A930 /* Note+CoreDataClass.swift */; };
 		8474BE942846D57100B2A930 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE902846D57100B2A930 /* Note+CoreDataProperties.swift */; };
 		8474BE952846D57100B2A930 /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE912846D57100B2A930 /* Users+CoreDataClass.swift */; };
 		8474BE962846D57100B2A930 /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE922846D57100B2A930 /* Users+CoreDataProperties.swift */; };
 		8474BE982846D5C900B2A930 /* DBHelperNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474BE972846D5C900B2A930 /* DBHelperNotes.swift */; };
+		848E06C2284832530090F7C3 /* Initialization.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06B3284832520090F7C3 /* Initialization.pdf */; };
+		848E06C3284832530090F7C3 /* Nested Types.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06B4284832520090F7C3 /* Nested Types.pdf */; };
+		848E06C4284832530090F7C3 /* Control Flow.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06B5284832520090F7C3 /* Control Flow.pdf */; };
+		848E06C5284832530090F7C3 /* Optional Chaining.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06B6284832520090F7C3 /* Optional Chaining.pdf */; };
+		848E06C6284832530090F7C3 /* Functions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06B7284832520090F7C3 /* Functions.pdf */; };
+		848E06C7284832530090F7C3 /* Enumerations.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06B8284832520090F7C3 /* Enumerations.pdf */; };
+		848E06C8284832530090F7C3 /* Methods.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06B9284832520090F7C3 /* Methods.pdf */; };
+		848E06C9284832530090F7C3 /* Structures and Classes.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06BA284832520090F7C3 /* Structures and Classes.pdf */; };
+		848E06CA284832530090F7C3 /* Extensions.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06BB284832520090F7C3 /* Extensions.pdf */; };
+		848E06CB284832530090F7C3 /* Closures.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06BC284832520090F7C3 /* Closures.pdf */; };
+		848E06CC284832530090F7C3 /* Inheritance.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06BD284832520090F7C3 /* Inheritance.pdf */; };
+		848E06CD284832530090F7C3 /* Properties.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06BE284832530090F7C3 /* Properties.pdf */; };
+		848E06CE284832530090F7C3 /* Basic Operators.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06BF284832530090F7C3 /* Basic Operators.pdf */; };
+		848E06CF284832530090F7C3 /* Error Handling.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06C0284832530090F7C3 /* Error Handling.pdf */; };
+		848E06D0284832530090F7C3 /* Collection Types.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 848E06C1284832530090F7C3 /* Collection Types.pdf */; };
+		848E06E0284832670090F7C3 /* bensound-longroad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06D1284832670090F7C3 /* bensound-longroad.mp3 */; };
+		848E06E1284832670090F7C3 /* bensound-worldonfire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06D2284832670090F7C3 /* bensound-worldonfire.mp3 */; };
+		848E06E2284832670090F7C3 /* bensound-allthewayup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06D3284832670090F7C3 /* bensound-allthewayup.mp3 */; };
+		848E06E3284832680090F7C3 /* bensound-autoreverse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06D4284832670090F7C3 /* bensound-autoreverse.mp3 */; };
+		848E06E4284832680090F7C3 /* bensound-dontlookbehind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06D5284832670090F7C3 /* bensound-dontlookbehind.mp3 */; };
+		848E06E5284832680090F7C3 /* bensound-takingcare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06D6284832670090F7C3 /* bensound-takingcare.mp3 */; };
+		848E06E6284832680090F7C3 /* bensound-funkhouse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06D7284832670090F7C3 /* bensound-funkhouse.mp3 */; };
+		848E06E7284832680090F7C3 /* bensound-lifeiswonderful.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06D8284832670090F7C3 /* bensound-lifeiswonderful.mp3 */; };
+		848E06E8284832680090F7C3 /* bensound-gravity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06D9284832670090F7C3 /* bensound-gravity.mp3 */; };
+		848E06E9284832680090F7C3 /* bensound-awaken.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06DA284832670090F7C3 /* bensound-awaken.mp3 */; };
+		848E06EA284832680090F7C3 /* bensound-wonderfulworld.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06DB284832670090F7C3 /* bensound-wonderfulworld.mp3 */; };
+		848E06EB284832680090F7C3 /* bensound-brave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06DC284832670090F7C3 /* bensound-brave.mp3 */; };
+		848E06EC284832680090F7C3 /* bensound-afterlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06DD284832670090F7C3 /* bensound-afterlight.mp3 */; };
+		848E06ED284832680090F7C3 /* bensound-floating.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06DE284832670090F7C3 /* bensound-floating.mp3 */; };
+		848E06EE284832680090F7C3 /* bensound-dontforget.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848E06DF284832670090F7C3 /* bensound-dontforget.mp3 */; };
 		84BB8052284014EF0097A90E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB8051284014EF0097A90E /* BooksViewController.swift */; };
 		84BB8054284015BB0097A90E /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB8053284015BB0097A90E /* MusicTableViewCell.swift */; };
 		84BB8056284015E40097A90E /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB8055284015E40097A90E /* MusicViewController.swift */; };
@@ -49,12 +79,42 @@
 		84300EBF283ED68200748D9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845058812847AC000011A5E0 /* DBhelperUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBhelperUsers.swift; sourceTree = "<group>"; };
 		8452B69E284813A70049A9E8 /* OpenedBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenedBookViewController.swift; sourceTree = "<group>"; };
-		8452B6A2284815F40049A9E8 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = sample.pdf; path = ../../../../../sample.pdf; sourceTree = "<group>"; };
+		8452B6A2284815F40049A9E8 /* Xcode Overview.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Xcode Overview.pdf"; path = "../../../../../Xcode Overview.pdf"; sourceTree = "<group>"; };
 		8474BE8F2846D57100B2A930 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8474BE902846D57100B2A930 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8474BE912846D57100B2A930 /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8474BE922846D57100B2A930 /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8474BE972846D5C900B2A930 /* DBHelperNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelperNotes.swift; sourceTree = "<group>"; };
+		848E06B3284832520090F7C3 /* Initialization.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Initialization.pdf; path = "../../../../../funzone books/Initialization.pdf"; sourceTree = "<group>"; };
+		848E06B4284832520090F7C3 /* Nested Types.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Nested Types.pdf"; path = "../../../../../funzone books/Nested Types.pdf"; sourceTree = "<group>"; };
+		848E06B5284832520090F7C3 /* Control Flow.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Control Flow.pdf"; path = "../../../../../funzone books/Control Flow.pdf"; sourceTree = "<group>"; };
+		848E06B6284832520090F7C3 /* Optional Chaining.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Optional Chaining.pdf"; path = "../../../../../funzone books/Optional Chaining.pdf"; sourceTree = "<group>"; };
+		848E06B7284832520090F7C3 /* Functions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Functions.pdf; path = "../../../../../funzone books/Functions.pdf"; sourceTree = "<group>"; };
+		848E06B8284832520090F7C3 /* Enumerations.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Enumerations.pdf; path = "../../../../../funzone books/Enumerations.pdf"; sourceTree = "<group>"; };
+		848E06B9284832520090F7C3 /* Methods.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Methods.pdf; path = "../../../../../funzone books/Methods.pdf"; sourceTree = "<group>"; };
+		848E06BA284832520090F7C3 /* Structures and Classes.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Structures and Classes.pdf"; path = "../../../../../funzone books/Structures and Classes.pdf"; sourceTree = "<group>"; };
+		848E06BB284832520090F7C3 /* Extensions.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Extensions.pdf; path = "../../../../../funzone books/Extensions.pdf"; sourceTree = "<group>"; };
+		848E06BC284832520090F7C3 /* Closures.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Closures.pdf; path = "../../../../../funzone books/Closures.pdf"; sourceTree = "<group>"; };
+		848E06BD284832520090F7C3 /* Inheritance.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Inheritance.pdf; path = "../../../../../funzone books/Inheritance.pdf"; sourceTree = "<group>"; };
+		848E06BE284832530090F7C3 /* Properties.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Properties.pdf; path = "../../../../../funzone books/Properties.pdf"; sourceTree = "<group>"; };
+		848E06BF284832530090F7C3 /* Basic Operators.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Basic Operators.pdf"; path = "../../../../../funzone books/Basic Operators.pdf"; sourceTree = "<group>"; };
+		848E06C0284832530090F7C3 /* Error Handling.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Error Handling.pdf"; path = "../../../../../funzone books/Error Handling.pdf"; sourceTree = "<group>"; };
+		848E06C1284832530090F7C3 /* Collection Types.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Collection Types.pdf"; path = "../../../../../funzone books/Collection Types.pdf"; sourceTree = "<group>"; };
+		848E06D1284832670090F7C3 /* bensound-longroad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-longroad.mp3"; path = "../../../../../funzone music/bensound-longroad.mp3"; sourceTree = "<group>"; };
+		848E06D2284832670090F7C3 /* bensound-worldonfire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-worldonfire.mp3"; path = "../../../../../funzone music/bensound-worldonfire.mp3"; sourceTree = "<group>"; };
+		848E06D3284832670090F7C3 /* bensound-allthewayup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-allthewayup.mp3"; path = "../../../../../funzone music/bensound-allthewayup.mp3"; sourceTree = "<group>"; };
+		848E06D4284832670090F7C3 /* bensound-autoreverse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-autoreverse.mp3"; path = "../../../../../funzone music/bensound-autoreverse.mp3"; sourceTree = "<group>"; };
+		848E06D5284832670090F7C3 /* bensound-dontlookbehind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-dontlookbehind.mp3"; path = "../../../../../funzone music/bensound-dontlookbehind.mp3"; sourceTree = "<group>"; };
+		848E06D6284832670090F7C3 /* bensound-takingcare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-takingcare.mp3"; path = "../../../../../funzone music/bensound-takingcare.mp3"; sourceTree = "<group>"; };
+		848E06D7284832670090F7C3 /* bensound-funkhouse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-funkhouse.mp3"; path = "../../../../../funzone music/bensound-funkhouse.mp3"; sourceTree = "<group>"; };
+		848E06D8284832670090F7C3 /* bensound-lifeiswonderful.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-lifeiswonderful.mp3"; path = "../../../../../funzone music/bensound-lifeiswonderful.mp3"; sourceTree = "<group>"; };
+		848E06D9284832670090F7C3 /* bensound-gravity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-gravity.mp3"; path = "../../../../../funzone music/bensound-gravity.mp3"; sourceTree = "<group>"; };
+		848E06DA284832670090F7C3 /* bensound-awaken.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-awaken.mp3"; path = "../../../../../funzone music/bensound-awaken.mp3"; sourceTree = "<group>"; };
+		848E06DB284832670090F7C3 /* bensound-wonderfulworld.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-wonderfulworld.mp3"; path = "../../../../../funzone music/bensound-wonderfulworld.mp3"; sourceTree = "<group>"; };
+		848E06DC284832670090F7C3 /* bensound-brave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-brave.mp3"; path = "../../../../../funzone music/bensound-brave.mp3"; sourceTree = "<group>"; };
+		848E06DD284832670090F7C3 /* bensound-afterlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-afterlight.mp3"; path = "../../../../../funzone music/bensound-afterlight.mp3"; sourceTree = "<group>"; };
+		848E06DE284832670090F7C3 /* bensound-floating.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-floating.mp3"; path = "../../../../../funzone music/bensound-floating.mp3"; sourceTree = "<group>"; };
+		848E06DF284832670090F7C3 /* bensound-dontforget.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bensound-dontforget.mp3"; path = "../../../../../funzone music/bensound-dontforget.mp3"; sourceTree = "<group>"; };
 		84BB8051284014EF0097A90E /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		84BB8053284015BB0097A90E /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
 		84BB8055284015E40097A90E /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +188,22 @@
 		8452B638284802C50049A9E8 /* Books */ = {
 			isa = PBXGroup;
 			children = (
-				8452B6A2284815F40049A9E8 /* sample.pdf */,
+				848E06BF284832530090F7C3 /* Basic Operators.pdf */,
+				848E06BC284832520090F7C3 /* Closures.pdf */,
+				848E06C1284832530090F7C3 /* Collection Types.pdf */,
+				848E06B5284832520090F7C3 /* Control Flow.pdf */,
+				848E06B8284832520090F7C3 /* Enumerations.pdf */,
+				848E06C0284832530090F7C3 /* Error Handling.pdf */,
+				848E06BB284832520090F7C3 /* Extensions.pdf */,
+				848E06B7284832520090F7C3 /* Functions.pdf */,
+				848E06BD284832520090F7C3 /* Inheritance.pdf */,
+				848E06B3284832520090F7C3 /* Initialization.pdf */,
+				848E06B9284832520090F7C3 /* Methods.pdf */,
+				848E06B4284832520090F7C3 /* Nested Types.pdf */,
+				848E06B6284832520090F7C3 /* Optional Chaining.pdf */,
+				848E06BE284832530090F7C3 /* Properties.pdf */,
+				848E06BA284832520090F7C3 /* Structures and Classes.pdf */,
+				8452B6A2284815F40049A9E8 /* Xcode Overview.pdf */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -136,6 +211,21 @@
 		8452B67A28480CEF0049A9E8 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				848E06DD284832670090F7C3 /* bensound-afterlight.mp3 */,
+				848E06D3284832670090F7C3 /* bensound-allthewayup.mp3 */,
+				848E06D4284832670090F7C3 /* bensound-autoreverse.mp3 */,
+				848E06DA284832670090F7C3 /* bensound-awaken.mp3 */,
+				848E06DC284832670090F7C3 /* bensound-brave.mp3 */,
+				848E06DF284832670090F7C3 /* bensound-dontforget.mp3 */,
+				848E06D5284832670090F7C3 /* bensound-dontlookbehind.mp3 */,
+				848E06DE284832670090F7C3 /* bensound-floating.mp3 */,
+				848E06D7284832670090F7C3 /* bensound-funkhouse.mp3 */,
+				848E06D9284832670090F7C3 /* bensound-gravity.mp3 */,
+				848E06D8284832670090F7C3 /* bensound-lifeiswonderful.mp3 */,
+				848E06D1284832670090F7C3 /* bensound-longroad.mp3 */,
+				848E06D6284832670090F7C3 /* bensound-takingcare.mp3 */,
+				848E06DB284832670090F7C3 /* bensound-wonderfulworld.mp3 */,
+				848E06D2284832670090F7C3 /* bensound-worldonfire.mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -198,10 +288,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8452B6A3284815F40049A9E8 /* sample.pdf in Resources */,
+				848E06C3284832530090F7C3 /* Nested Types.pdf in Resources */,
+				8452B6A3284815F40049A9E8 /* Xcode Overview.pdf in Resources */,
+				848E06CB284832530090F7C3 /* Closures.pdf in Resources */,
+				848E06CD284832530090F7C3 /* Properties.pdf in Resources */,
+				848E06ED284832680090F7C3 /* bensound-floating.mp3 in Resources */,
+				848E06C4284832530090F7C3 /* Control Flow.pdf in Resources */,
+				848E06C9284832530090F7C3 /* Structures and Classes.pdf in Resources */,
 				84300EBE283ED68200748D9E /* LaunchScreen.storyboard in Resources */,
+				848E06E8284832680090F7C3 /* bensound-gravity.mp3 in Resources */,
+				848E06E7284832680090F7C3 /* bensound-lifeiswonderful.mp3 in Resources */,
+				848E06CF284832530090F7C3 /* Error Handling.pdf in Resources */,
+				848E06EC284832680090F7C3 /* bensound-afterlight.mp3 in Resources */,
+				848E06E4284832680090F7C3 /* bensound-dontlookbehind.mp3 in Resources */,
+				848E06EB284832680090F7C3 /* bensound-brave.mp3 in Resources */,
+				848E06C5284832530090F7C3 /* Optional Chaining.pdf in Resources */,
 				84300EBB283ED68200748D9E /* Assets.xcassets in Resources */,
+				848E06CE284832530090F7C3 /* Basic Operators.pdf in Resources */,
+				848E06E1284832670090F7C3 /* bensound-worldonfire.mp3 in Resources */,
+				848E06EE284832680090F7C3 /* bensound-dontforget.mp3 in Resources */,
+				848E06CC284832530090F7C3 /* Inheritance.pdf in Resources */,
+				848E06D0284832530090F7C3 /* Collection Types.pdf in Resources */,
+				848E06C8284832530090F7C3 /* Methods.pdf in Resources */,
+				848E06E2284832670090F7C3 /* bensound-allthewayup.mp3 in Resources */,
+				848E06C7284832530090F7C3 /* Enumerations.pdf in Resources */,
+				848E06C6284832530090F7C3 /* Functions.pdf in Resources */,
+				848E06E3284832680090F7C3 /* bensound-autoreverse.mp3 in Resources */,
+				848E06EA284832680090F7C3 /* bensound-wonderfulworld.mp3 in Resources */,
+				848E06E0284832670090F7C3 /* bensound-longroad.mp3 in Resources */,
+				848E06E6284832680090F7C3 /* bensound-funkhouse.mp3 in Resources */,
+				848E06E5284832680090F7C3 /* bensound-takingcare.mp3 in Resources */,
 				84300EB6283ED68000748D9E /* Main.storyboard in Resources */,
+				848E06C2284832530090F7C3 /* Initialization.pdf in Resources */,
+				848E06CA284832530090F7C3 /* Extensions.pdf in Resources */,
+				848E06E9284832680090F7C3 /* bensound-awaken.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

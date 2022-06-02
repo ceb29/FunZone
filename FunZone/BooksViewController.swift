@@ -9,7 +9,7 @@ import UIKit
 
 class BooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
     @IBOutlet weak var booksCollectionView: UICollectionView!
-    var dataText = ["sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample", "sample"]
+    var dataText = ["Basic Operators", "Closures", "Collection Types", "Control Flow", "Enumerations", "Error Handling", "Extensions", "Functions", "Inheritance", "Initialization", "Methods", "Nested Types", "Optional Chaining", "Properties", "Structures and Classes"]
     //var dataImg = ["img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1", "img1"]
     var searchResultDataText : [String] = []
     var searchResultDataImg : [String] = []
