@@ -24,6 +24,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MusicTableViewCell
         myCell.musicLabel.text = searchResultDataText[indexPath.row]
+        //myCell.backgroundColor = UIColor.clear
         return myCell
     }
     
