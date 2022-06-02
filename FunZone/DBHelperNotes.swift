@@ -21,7 +21,7 @@ class DBHelperNotes{
         note.content = contentValue
         do{
             try context?.save() //saves to database
-            print("data saved")
+            //print("data saved")
         }
         catch{
             print("data not saved")
@@ -53,7 +53,7 @@ class DBHelperNotes{
                 noteExists = true
             }
             else{
-                print("data not found")
+                //print("data not found")
                 noteExists = false
             }
         }
@@ -74,7 +74,7 @@ class DBHelperNotes{
                 note = request?.first as! Note
                 note.content = content
                 try context?.save()
-                print("data updated")
+                //print("data updated")
             }
         }
         catch{

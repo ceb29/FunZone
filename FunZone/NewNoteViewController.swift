@@ -35,22 +35,22 @@ class NewNoteViewController: UIViewController {
         if newNoteStatus{
             let note = DBHelperNotes.dbHelper.getOneNoteData(title: noteTitle.text!)
             if note.noteFlag{ //note with title already exists
-                print("note title already exists")
+                //print("note title already exists")
                 resultLabel.text = "Title Already Exists"
             }
             else{
                 DBHelperNotes.dbHelper.addNoteData(titleValue: noteTitle.text!, contentValue: noteContent.text!)
                 newNoteStatus = false
                  //create new note and save into new notes id
-                print("saveNew")
-                print(note.noteFlag)
+                //print("saveNew")
+                //print(note.noteFlag)
                 saveCheckmark.isHidden = false
             }
             
         }
         else{
             DBHelperNotes.dbHelper.updateNoteData(title: noteTitle.text!, content: noteContent.text!)
-            print("saveUpdate")
+            //print("saveUpdate")
             saveCheckmark.isHidden = false
         }
     }

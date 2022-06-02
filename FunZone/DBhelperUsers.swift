@@ -19,7 +19,7 @@ class DBHelperUsers{
         user.password = passwordValue
         do{
             try context?.save() //saves to database
-            print("data saved")
+            //print("data saved")
         }
         catch{
             print("data not saved")
@@ -52,7 +52,7 @@ class DBHelperUsers{
             }
             else{
                 userExists = false
-                print("data not found")
+                //print("data not found")
             }
         }
         catch{
@@ -72,7 +72,7 @@ class DBHelperUsers{
                 user = request?.first as! Users
                 user.password = password
                 try context?.save()
-                print("data updated")
+                //print("data updated")
             }
         }
         catch{
