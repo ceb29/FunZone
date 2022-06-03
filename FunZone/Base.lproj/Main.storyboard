@@ -478,6 +478,20 @@
                                     <action selector="playPauseClicked:" destination="LiN-TD-HuX" eventType="touchUpInside" id="Mvg-Oi-oKO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhD-H8-dTg">
+                                <rect key="frame" x="84" y="433" width="44" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="GAq-u7-VHB"/>
+                                    <constraint firstAttribute="width" constant="44" id="eSV-2F-wAT"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="backward.end.fill" catalog="system">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToPreviousSong:" destination="LiN-TD-HuX" eventType="touchUpInside" id="BnC-YO-ddz"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnt-Eg-tzf">
                                 <rect key="frame" x="149" y="432" width="42" height="31"/>
                                 <constraints>
@@ -492,17 +506,6 @@
                                     <action selector="stopClicked:" destination="LiN-TD-HuX" eventType="touchUpInside" id="j7x-2B-suQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhD-H8-dTg">
-                                <rect key="frame" x="84" y="433" width="44" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="GAq-u7-VHB"/>
-                                    <constraint firstAttribute="width" constant="44" id="eSV-2F-wAT"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="backward.end.fill" catalog="system">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyl-I4-dNs">
                                 <rect key="frame" x="286" y="432" width="44" height="31"/>
                                 <constraints>
@@ -513,6 +516,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="forward.end.fill" catalog="system">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToNextSong:" destination="LiN-TD-HuX" eventType="touchUpInside" id="Hxw-f8-V2B"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Song Selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coW-H3-G2D">
                                 <rect key="frame" x="71" y="254" width="272" height="21"/>
@@ -651,9 +657,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzm-iF-KVH">
-                                <rect key="frame" x="138" y="433" width="129" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzm-iF-KVH">
+                                <rect key="frame" x="142.5" y="433" width="129" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="IhD-Lb-wIK"/>
+                                    <constraint firstAttribute="width" constant="129" id="ij8-7J-GFb"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start"/>
                                 <connections>
@@ -667,8 +676,10 @@
                             <constraint firstItem="i8l-Lc-9E7" firstAttribute="leading" secondItem="7Yy-E7-vzD" secondAttribute="leading" id="9nV-jg-1n9"/>
                             <constraint firstItem="y5o-sx-7eZ" firstAttribute="centerX" secondItem="Cmo-Pr-5Vq" secondAttribute="centerX" id="Bux-c0-cyH"/>
                             <constraint firstItem="y5o-sx-7eZ" firstAttribute="top" secondItem="7Yy-E7-vzD" secondAttribute="top" id="JcJ-VO-X2W"/>
+                            <constraint firstItem="fzm-iF-KVH" firstAttribute="top" secondItem="y5o-sx-7eZ" secondAttribute="bottom" constant="342" id="Qgb-Ou-hiJ"/>
                             <constraint firstItem="i8l-Lc-9E7" firstAttribute="trailing" secondItem="7Yy-E7-vzD" secondAttribute="trailing" id="U7X-Kz-bpd"/>
                             <constraint firstItem="i8l-Lc-9E7" firstAttribute="top" secondItem="Cmo-Pr-5Vq" secondAttribute="top" id="htM-57-nHd"/>
+                            <constraint firstItem="fzm-iF-KVH" firstAttribute="centerX" secondItem="Cmo-Pr-5Vq" secondAttribute="centerX" id="qbu-gH-iTw"/>
                             <constraint firstAttribute="bottom" secondItem="i8l-Lc-9E7" secondAttribute="bottom" id="zCQ-37-I1r"/>
                         </constraints>
                     </view>

@@ -17,13 +17,17 @@ class MusicPlayerViewController: UIViewController {
     var songDuration = ""
     var playing = false
     var songLoaded = false
+    var currentSongIndex = 0
+    var dataTextSize = MusicViewController.dataText.count
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var progressSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         songTitleLabel.text = currentSong
         setupMusicPlayer()
+        getCurrentSongIndex()
     }
     
     func setupMusicPlayer(){
@@ -46,6 +50,35 @@ class MusicPlayerViewController: UIViewController {
         return String(minutes) + ":" + String(secondsRemaining)
     }
     
+    func getCurrentSongIndex(){
+        for i in 0..<dataTextSize - 1{
+            if currentSong == MusicViewController.dataText[i]{
+                currentSongIndex = i
+                break
+            }
+        }
+    }
+    
+    func stopPlaying(){
+        musicPlayer?.stop()
+        musicPlayer?.currentTime = 0
+        timer?.invalidate()
+        x = 0
+        resultLabel.text = "0:00"
+        progressSlider.value = 0
+        playing = false
+        print("music stopped playing")
+    }
+    
+    func startPlaying(){
+        musicPlayer?.play()
+        songLoaded = true
+        durationLabel.text = getFormatedTime(seconds: Int(musicPlayer!.duration))
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateMusicTime), userInfo: nil, repeats: true)
+        playing = true
+        print("music is playing")
+    }
+    
     @IBAction func playPauseClicked(_ sender: Any) {
         if playing{
             musicPlayer?.pause()
@@ -54,15 +87,9 @@ class MusicPlayerViewController: UIViewController {
             print("music is paused")
         }
         else{
-            musicPlayer?.play()
-            songLoaded = true
-            durationLabel.text = getFormatedTime(seconds: Int(musicPlayer!.duration))
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateMusicTime), userInfo: nil, repeats: true)
-            playing = true
-            print("music is playing")
+            startPlaying()
         }
     }
-    
     
     @IBAction func stopClicked(_ sender: Any) {
         musicPlayer?.stop()
@@ -87,6 +114,38 @@ class MusicPlayerViewController: UIViewController {
         }
     }
     
+    func updateSong(){
+        currentSong = MusicViewController.dataText[currentSongIndex]
+        songTitleLabel.text = currentSong
+        if playing{
+            stopPlaying()
+            startPlaying()
+        }
+        else{
+            stopPlaying()
+        }
+    }
+    
+    @IBAction func goToNextSong(_ sender: Any) {
+        switch currentSongIndex{
+        case dataTextSize - 1:
+            currentSongIndex = 0
+        default:
+            currentSongIndex+=1
+        }
+        updateSong()
+    }
+    
+    @IBAction func goToPreviousSong(_ sender: Any) {
+        switch currentSongIndex{
+        case 0:
+            currentSongIndex = dataTextSize - 1
+        default:
+            currentSongIndex-=1
+        }
+        updateSong()
+    }
+    
     @objc func updateMusicTime(){
         //resultLabel.text = getFormatedTime(Int(musicPlayer!.currentTime))
         //progressSlider.value = Float(musicPlayer!.currentTime) / Float(musicPlayer!.duration)
@@ -96,9 +155,4 @@ class MusicPlayerViewController: UIViewController {
         resultLabel.text = getFormatedTime(seconds: Int(x))
         progressSlider.value = x / Float(musicPlayer!.duration)
     }
-    
-    
-    
-    
-    
 }

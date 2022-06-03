@@ -9,12 +9,12 @@ import UIKit
 
 class MusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet weak var musicTableView: UITableView!
-    var dataText = ["bensound-afterlight", "bensound-allthewayup", "bensound-autoreverse", "bensound-awaken", "bensound-brave", "bensound-dontforget", "bensound-dontlookbehind", "bensound-floating", "bensound-funkhouse", "bensound-gravity", "bensound-lifeiswonderful", "bensound-longroad", "bensound-takingcare", "bensound-wonderfulworld", "bensound-worldonfire"]
+    static var dataText = ["bensound-afterlight", "bensound-allthewayup", "bensound-autoreverse", "bensound-awaken", "bensound-brave", "bensound-dontforget", "bensound-dontlookbehind", "bensound-floating", "bensound-funkhouse", "bensound-gravity", "bensound-lifeiswonderful", "bensound-longroad", "bensound-takingcare", "bensound-wonderfulworld", "bensound-worldonfire"]
     var searchResultDataText : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchResultDataText = dataText
+        searchResultDataText = MusicViewController.dataText
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,10 +30,10 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty{
-            searchResultDataText = dataText
+            searchResultDataText = MusicViewController.dataText
         }
         else{
-            searchResultDataText = dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
+            searchResultDataText = MusicViewController.dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
         }
         musicTableView.reloadData()
     }
