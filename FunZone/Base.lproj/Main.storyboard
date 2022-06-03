@@ -641,20 +641,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8l-Lc-9E7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5o-sx-7eZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5o-sx-7eZ">
                                 <rect key="frame" x="105" y="44" width="204" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="dEg-ZH-BUV"/>
+                                    <constraint firstAttribute="width" constant="204" id="xVn-zF-9kH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtZ-3W-yht">
-                                <rect key="frame" x="155" y="433" width="105" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzm-iF-KVH">
+                                <rect key="frame" x="138" y="433" width="129" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start"/>
                                 <connections>
-                                    <action selector="startClicked:" destination="4Yr-QG-J6B" eventType="touchUpInside" id="iXf-ne-hcx"/>
+                                    <action selector="startSearching:" destination="4Yr-QG-J6B" eventType="touchUpInside" id="9Qu-gJ-4A2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -662,6 +665,8 @@
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="i8l-Lc-9E7" firstAttribute="leading" secondItem="7Yy-E7-vzD" secondAttribute="leading" id="9nV-jg-1n9"/>
+                            <constraint firstItem="y5o-sx-7eZ" firstAttribute="centerX" secondItem="Cmo-Pr-5Vq" secondAttribute="centerX" id="Bux-c0-cyH"/>
+                            <constraint firstItem="y5o-sx-7eZ" firstAttribute="top" secondItem="7Yy-E7-vzD" secondAttribute="top" id="JcJ-VO-X2W"/>
                             <constraint firstItem="i8l-Lc-9E7" firstAttribute="trailing" secondItem="7Yy-E7-vzD" secondAttribute="trailing" id="U7X-Kz-bpd"/>
                             <constraint firstItem="i8l-Lc-9E7" firstAttribute="top" secondItem="Cmo-Pr-5Vq" secondAttribute="top" id="htM-57-nHd"/>
                             <constraint firstAttribute="bottom" secondItem="i8l-Lc-9E7" secondAttribute="bottom" id="zCQ-37-I1r"/>
@@ -773,24 +778,29 @@
             </objects>
             <point key="canvasLocation" x="6050.7246376811599" y="69.642857142857139"/>
         </scene>
-        <!--Search Started View Controller-->
+        <!--Search Start View Controller-->
         <scene sceneID="Ukf-zk-DQB">
             <objects>
-                <viewController storyboardIdentifier="SearchStart" id="8ng-kU-ZNw" customClass="SearchStartedViewController" customModule="FunZone" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNE-x1-7dG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="SearchStart" id="8ng-kU-ZNw" customClass="SearchStartViewController" customModule="FunZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tys-oC-zAL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GV7-Rx-FLl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GV7-Rx-FLl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GeY-M4-SzS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GV7-Rx-FLl" firstAttribute="leading" secondItem="GeY-M4-SzS" secondAttribute="leading" id="9NQ-No-7fB"/>
+                            <constraint firstItem="GV7-Rx-FLl" firstAttribute="top" secondItem="Tys-oC-zAL" secondAttribute="top" id="9Nz-P2-Uvx"/>
+                            <constraint firstItem="GV7-Rx-FLl" firstAttribute="trailing" secondItem="GeY-M4-SzS" secondAttribute="trailing" id="p4L-LG-Lon"/>
+                            <constraint firstAttribute="bottom" secondItem="GV7-Rx-FLl" secondAttribute="bottom" id="zCb-Ah-JZa"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vNE-x1-7dG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5271" y="741"/>
         </scene>

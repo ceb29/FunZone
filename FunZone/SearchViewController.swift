@@ -7,15 +7,16 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
-    @IBAction func startClicked(_ sender: Any) {
+    @IBAction func startSearching(_ sender: Any) {
         let storyObject = UIStoryboard(name: "Main", bundle: nil)
-        let searchStartedScreen = storyObject.instantiateViewController(withIdentifier: "SearchStart") as! SearchStartedViewController
-        self.navigationController?.pushViewController(searchStartedScreen, animated: true)
+        let searchStartedScreen = storyObject.instantiateViewController(withIdentifier: "SearchStart") as! SearchStartViewController
+                self.navigationController?.pushViewController(searchStartedScreen, animated: true)
     }
+    
 }
