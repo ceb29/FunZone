@@ -30,6 +30,11 @@ class MusicPlayerViewController: UIViewController {
         getCurrentSongIndex()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopPlaying()
+    }
+    
     func setupMusicPlayer(){
         let filePath = Bundle.main.path(forResource: currentSong, ofType: "mp3")
         let url = URL(fileURLWithPath: filePath!)

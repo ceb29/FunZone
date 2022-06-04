@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8415A111284013D2008D1863 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415A110284013D2008D1863 /* SignUpViewController.swift */; };
 		8415A1132840141E008D1863 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415A1122840141E008D1863 /* NotesViewController.swift */; };
 		8415A11528401430008D1863 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415A11428401430008D1863 /* SearchViewController.swift */; };
 		8428DB77284AAF6F007F8758 /* SearchStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428DB76284AAF6F007F8758 /* SearchStartViewController.swift */; };
+		842B0E32284BE99700E78F4E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0E31284BE99700E78F4E /* SignUpViewController.swift */; };
 		84300EAF283ED68000748D9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84300EAE283ED68000748D9E /* AppDelegate.swift */; };
 		84300EB1283ED68000748D9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84300EB0283ED68000748D9E /* SceneDelegate.swift */; };
 		84300EB3283ED68000748D9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84300EB2283ED68000748D9E /* ViewController.swift */; };
@@ -67,10 +67,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8415A110284013D2008D1863 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8415A1122840141E008D1863 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		8415A11428401430008D1863 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8428DB76284AAF6F007F8758 /* SearchStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStartViewController.swift; sourceTree = "<group>"; };
+		842B0E31284BE99700E78F4E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84300EAB283ED68000748D9E /* FunZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84300EAE283ED68000748D9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84300EB0283ED68000748D9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				84300EBF283ED68200748D9E /* Info.plist */,
 				84300EB7283ED68000748D9E /* FunZone.xcdatamodeld */,
 				84BB8059284018BB0097A90E /* LoginViewController.swift */,
-				8415A110284013D2008D1863 /* SignUpViewController.swift */,
+				842B0E31284BE99700E78F4E /* SignUpViewController.swift */,
 				84BB8055284015E40097A90E /* MusicViewController.swift */,
 				848E06EF284841EE0090F7C3 /* MusicPlayerViewController.swift */,
 				84BB8051284014EF0097A90E /* BooksViewController.swift */,
@@ -355,8 +355,8 @@
 				84300EB1283ED68000748D9E /* SceneDelegate.swift in Sources */,
 				845058822847AC000011A5E0 /* DBhelperUsers.swift in Sources */,
 				8474BE932846D57100B2A930 /* Note+CoreDataClass.swift in Sources */,
+				842B0E32284BE99700E78F4E /* SignUpViewController.swift in Sources */,
 				8474BE952846D57100B2A930 /* Users+CoreDataClass.swift in Sources */,
-				8415A111284013D2008D1863 /* SignUpViewController.swift in Sources */,
 				8452B69F284813A70049A9E8 /* OpenedBookViewController.swift in Sources */,
 				8428DB77284AAF6F007F8758 /* SearchStartViewController.swift in Sources */,
 				8474BE982846D5C900B2A930 /* DBHelperNotes.swift in Sources */,

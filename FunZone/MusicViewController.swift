@@ -10,7 +10,10 @@ import UIKit
 class MusicViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet weak var musicTableView: UITableView!
     static var dataText = ["bensound-afterlight", "bensound-allthewayup", "bensound-autoreverse", "bensound-awaken", "bensound-brave", "bensound-dontforget", "bensound-dontlookbehind", "bensound-floating", "bensound-funkhouse", "bensound-gravity", "bensound-lifeiswonderful", "bensound-longroad", "bensound-takingcare", "bensound-wonderfulworld", "bensound-worldonfire"]
+    static var dataImg : [String : String] = ["bensound-afterlight" : "andybirdArtwork", "bensound-allthewayup" : "edrecords" , "bensound-autoreverse" : "twinsmusic-retro", "bensound-awaken" : "danphillipson", "bensound-brave" : "twinsmusic-cinematic", "bensound-dontforget" : "yari", "bensound-dontlookbehind": "evertzeevalkink", "bensound-floating" : "tomasnovoa", "bensound-funkhouse" : "indiebox-3", "bensound-gravity" : "andybirdArtwork", "bensound-lifeiswonderful" : "zacnelson" , "bensound-longroad" : "evertzeevalkink", "bensound-takingcare" : "indiebox-3", "bensound-wonderfulworld" : "indiebox-3", "bensound-worldonfire" : "andybirdArtwork"]
     var searchResultDataText : [String] = []
+    
+    var searchResultDataIndex : [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MusicTableViewCell
         myCell.musicLabel.text = searchResultDataText[indexPath.row]
+        myCell.musicImg.image = UIImage(named: MusicViewController.dataImg[searchResultDataText[indexPath.row]]!)
         //myCell.backgroundColor = UIColor.clear
         return myCell
     }
