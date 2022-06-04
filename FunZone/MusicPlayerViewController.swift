@@ -16,7 +16,7 @@ class MusicPlayerViewController: UIViewController {
     var timer : Timer?
     var simulatedTime : Float = 0
     var songDuration = ""
-    var playing = false
+    var currentStatus = SongStatus.stopped
     var songLoaded = false
     var currentSongIndex = 0
     var dataTextSize = MusicViewController.dataText.count
@@ -24,6 +24,12 @@ class MusicPlayerViewController: UIViewController {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var progressSlider: UISlider!
     @IBOutlet weak var songImg: UIImageView!
+    
+    enum SongStatus {
+        case playing
+        case stopped
+        case paused
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,14 +74,17 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func stopPlaying(){
-        if playing{
+        switch currentStatus {
+        case .stopped:
+            print("music already stopped")
+        default:
             musicPlayer?.stop()
             musicPlayer?.currentTime = 0
             timer?.invalidate()
             simulatedTime = 0
             resultLabel.text = "0:00"
             progressSlider.value = 0
-            playing = false
+            currentStatus = .stopped
             print("music stopped playing")
         }
     }
@@ -85,26 +94,30 @@ class MusicPlayerViewController: UIViewController {
         songLoaded = true
         durationLabel.text = getFormatedTime(seconds: Int(musicPlayer!.duration))
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateMusicTime), userInfo: nil, repeats: true)
-        playing = true
+        currentStatus = .playing
         print("music is playing")
     }
     
     @IBAction func playPauseClicked(_ sender: Any) {
-        if playing{
+        switch currentStatus {
+        case .playing:
             musicPlayer?.pause()
             timer?.invalidate()
-            playing = false
+            currentStatus = .paused
             print("music is paused")
-        }
-        else{
+        default:
             startPlaying()
         }
     }
     
     @IBAction func stopClicked(_ sender: Any) {
-        if playing{
+        switch currentStatus {
+        case .stopped:
+            print("music already stopped")
+        default:
             stopPlaying()
         }
+
     }
     
     @IBAction func progressSliderMoved(_ sender: Any) {
@@ -125,11 +138,11 @@ class MusicPlayerViewController: UIViewController {
         songTitleLabel.text = currentSong
         songImg.image = UIImage(named: currentSongImg)
         
-        if playing{
+        switch currentStatus {
+        case .playing:
             stopPlaying()
             startPlaying()
-        }
-        else{
+        default:
             stopPlaying()
         }
     }
