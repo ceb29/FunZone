@@ -96,7 +96,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="one-time-code"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aI5-rA-zdd">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aI5-rA-zdd">
                                 <rect key="frame" x="109" y="375" width="49" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="knx-SR-tr3"/>
@@ -394,20 +394,20 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFg-wx-QrC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <rect key="frame" x="0.0" y="106" width="120" height="14"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="120" id="Hfe-SG-aeS"/>
-                                                        <constraint firstAttribute="width" constant="120" id="h7Z-aI-yb2"/>
+                                                        <constraint firstAttribute="width" constant="120" id="Oea-MH-QTB"/>
+                                                        <constraint firstAttribute="height" constant="14" id="j2X-FK-pa8"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="P1f-fL-kMP" firstAttribute="centerX" secondItem="mSb-vQ-uaC" secondAttribute="centerX" id="2Y9-ht-Zeu"/>
-                                                <constraint firstItem="GFg-wx-QrC" firstAttribute="centerX" secondItem="mSb-vQ-uaC" secondAttribute="centerX" id="g6c-CI-EWx"/>
-                                                <constraint firstItem="GFg-wx-QrC" firstAttribute="top" secondItem="mSb-vQ-uaC" secondAttribute="top" id="nSS-FY-Oh9"/>
+                                                <constraint firstItem="GFg-wx-QrC" firstAttribute="top" secondItem="P1f-fL-kMP" secondAttribute="bottom" constant="8" id="VQr-60-C7g"/>
+                                                <constraint firstItem="GFg-wx-QrC" firstAttribute="centerX" secondItem="mSb-vQ-uaC" secondAttribute="centerX" id="dHv-SN-H1s"/>
                                                 <constraint firstItem="P1f-fL-kMP" firstAttribute="top" secondItem="mSb-vQ-uaC" secondAttribute="top" id="yry-rJ-TE1"/>
                                             </constraints>
                                         </collectionViewCellContentView>
