@@ -14,7 +14,7 @@ class MusicPlayerViewController: UIViewController {
     var currentSong = ""
     var currentSongImg = ""
     var timer : Timer?
-    var x : Float = 0
+    var simulatedTime : Float = 0
     var songDuration = ""
     var playing = false
     var songLoaded = false
@@ -68,14 +68,16 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func stopPlaying(){
-        musicPlayer?.stop()
-        musicPlayer?.currentTime = 0
-        timer?.invalidate()
-        x = 0
-        resultLabel.text = "0:00"
-        progressSlider.value = 0
-        playing = false
-        print("music stopped playing")
+        if playing{
+            musicPlayer?.stop()
+            musicPlayer?.currentTime = 0
+            timer?.invalidate()
+            simulatedTime = 0
+            resultLabel.text = "0:00"
+            progressSlider.value = 0
+            playing = false
+            print("music stopped playing")
+        }
     }
     
     func startPlaying(){
@@ -101,14 +103,7 @@ class MusicPlayerViewController: UIViewController {
     
     @IBAction func stopClicked(_ sender: Any) {
         if playing{
-            musicPlayer?.stop()
-            musicPlayer?.currentTime = 0
-            timer?.invalidate()
-            x = 0
-            resultLabel.text = "0:00"
-            progressSlider.value = 0
-            playing = false
-            print("music stopped playing")
+            stopPlaying()
         }
     }
     
@@ -116,8 +111,8 @@ class MusicPlayerViewController: UIViewController {
         if songLoaded{
             //musicPlayer?.currentTime = progressSlider.value * Float(musicPlayer!.duration)
             //resultLabel.text = getFormatedTime(Int(musicPlayer!.currentTime))
-            x = progressSlider.value * Float(musicPlayer!.duration)
-            resultLabel.text = getFormatedTime(seconds: Int(x))
+            simulatedTime = progressSlider.value * Float(musicPlayer!.duration)
+            resultLabel.text = getFormatedTime(seconds: Int(simulatedTime))
         }
         else{
             progressSlider.value = 0
@@ -162,10 +157,9 @@ class MusicPlayerViewController: UIViewController {
     @objc func updateMusicTime(){
         //resultLabel.text = getFormatedTime(Int(musicPlayer!.currentTime))
         //progressSlider.value = Float(musicPlayer!.currentTime) / Float(musicPlayer!.duration)
-        print("current time description: ", musicPlayer?.currentTime.description)
-        
-        x+=1
-        resultLabel.text = getFormatedTime(seconds: Int(x))
-        progressSlider.value = x / Float(musicPlayer!.duration)
+        print("musicPlayer!.currenttime.description: ", musicPlayer?.currentTime.description, "simulatedTime: ", simulatedTime)
+        simulatedTime+=1
+        resultLabel.text = getFormatedTime(seconds: Int(simulatedTime))
+        progressSlider.value = simulatedTime / Float(musicPlayer!.duration)
     }
 }
