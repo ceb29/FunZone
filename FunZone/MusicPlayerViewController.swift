@@ -12,6 +12,7 @@ class MusicPlayerViewController: UIViewController {
     @IBOutlet weak var songTitleLabel: UILabel!
     var musicPlayer : AVAudioPlayer?
     var currentSong = ""
+    var currentSongImg = ""
     var timer : Timer?
     var x : Float = 0
     var songDuration = ""
@@ -22,10 +23,12 @@ class MusicPlayerViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var progressSlider: UISlider!
+    @IBOutlet weak var songImg: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         songTitleLabel.text = currentSong
+        songImg.image = UIImage(named: currentSongImg)
         setupMusicPlayer()
         getCurrentSongIndex()
     }
@@ -97,14 +100,16 @@ class MusicPlayerViewController: UIViewController {
     }
     
     @IBAction func stopClicked(_ sender: Any) {
-        musicPlayer?.stop()
-        musicPlayer?.currentTime = 0
-        timer?.invalidate()
-        x = 0
-        resultLabel.text = "0:00"
-        progressSlider.value = 0
-        playing = false
-        print("music stopped playing")
+        if playing{
+            musicPlayer?.stop()
+            musicPlayer?.currentTime = 0
+            timer?.invalidate()
+            x = 0
+            resultLabel.text = "0:00"
+            progressSlider.value = 0
+            playing = false
+            print("music stopped playing")
+        }
     }
     
     @IBAction func progressSliderMoved(_ sender: Any) {
@@ -121,7 +126,10 @@ class MusicPlayerViewController: UIViewController {
     
     func updateSong(){
         currentSong = MusicViewController.dataText[currentSongIndex]
+        currentSongImg = MusicViewController.dataImg[currentSong]!
         songTitleLabel.text = currentSong
+        songImg.image = UIImage(named: currentSongImg)
+        
         if playing{
             stopPlaying()
             startPlaying()
