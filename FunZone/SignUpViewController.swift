@@ -2,24 +2,24 @@
 //  SignUpViewController.swift
 //  FunZone
 //
-//  Created by admin on 5/26/22.
+//  Created by admin on 6/4/22.
 //
 
 import UIKit
 
 class SignUpViewController: UIViewController {
-    @IBOutlet weak var username: UITextField!
-    @IBOutlet weak var password: UITextField!
+
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
     @IBAction func submitButton(_ sender: Any) {
-        if username.text != nil && password.text != nil{
+        if usernameTextField.text != nil && passwordTextField.text != nil{
             if isUniqueUser() && isValidUsernamePassword(){
                 saveUser()
             }
@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
     }
     
     func isUniqueUser() -> Bool{
-        let data = DBHelperUsers.dbHelper.getOneUserData(username: username.text!)
+        let data = DBHelperUsers.dbHelper.getOneUserData(username: usernameTextField.text!)
         if data.userFlag{
             resultLabel.text = "That username already exists."
             return false
@@ -38,7 +38,7 @@ class SignUpViewController: UIViewController {
     }
     
     func isValidUsernamePassword() -> Bool{
-        if isValidText(text: username.text!) && isValidText(text: password.text!){
+        if isValidText(text: usernameTextField.text!) && isValidText(text: passwordTextField.text!){
             return true
         }
         resultLabel.text = "The username and password cannot have spaces or be blank."
@@ -53,7 +53,7 @@ class SignUpViewController: UIViewController {
     }
     
     func saveUser(){
-        DBHelperUsers.dbHelper.addUserData(usernameValue: username.text!, passwordValue: password.text!)
+        DBHelperUsers.dbHelper.addUserData(usernameValue: usernameTextField.text!, passwordValue: passwordTextField.text!)
         goToLogin()
     }
     
@@ -63,4 +63,5 @@ class SignUpViewController: UIViewController {
         //present(welcomeScreen, animated: true,  completion: nil)
         self.navigationController?.pushViewController(welcomeScreen, animated: true)
     }
+
 }
