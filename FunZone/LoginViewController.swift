@@ -68,27 +68,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func changeRememberValue(_ sender: Any) {
-        rememberIsOn = rememberIsOn ? false : true
-        print(rememberIsOn)
-        /*switch rememberIsOn{
-        case true:
-            rememberIsOn = false
-        case false:
-            rememberIsOn = true
-        default:
-            print("error when remember me changed")
-        }*/
-    }
-    
-    @IBAction func submitClicked(_ sender: Any) {
-        if usernameTextField.text != nil && passwordTextField.text != nil{
-            checkUser()
-        }
-    }
-}
-
-extension LoginViewController{
     //methods for storing username and password
     func saveKey() {
         let attribute : [String : Any] = [kSecClass as String : kSecClassGenericPassword, kSecAttrAccount as String : usernameTextField.text, kSecValueData as String : passwordTextField.text!.data(using: .utf8)]
@@ -137,6 +116,25 @@ extension LoginViewController{
         }
         else{
             print("error during delete")
+        }
+    }
+    
+    @IBAction func changeRememberValue(_ sender: Any) {
+        rememberIsOn = rememberIsOn ? false : true
+        print(rememberIsOn)
+        /*switch rememberIsOn{
+        case true:
+            rememberIsOn = false
+        case false:
+            rememberIsOn = true
+        default:
+            print("error when remember me changed")
+        }*/
+    }
+    
+    @IBAction func submitClicked(_ sender: Any) {
+        if usernameTextField.text != nil && passwordTextField.text != nil{
+            checkUser()
         }
     }
 }
