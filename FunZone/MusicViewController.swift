@@ -13,8 +13,6 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     static var dataImg : [String : String] = ["bensound-afterlight" : "andybirdArtwork", "bensound-allthewayup" : "edrecords" , "bensound-autoreverse" : "twinsmusic-retro", "bensound-awaken" : "danphillipson", "bensound-brave" : "twinsmusic-cinematic", "bensound-dontforget" : "yari", "bensound-dontlookbehind": "evertzeevalkink", "bensound-floating" : "tomasnovoa", "bensound-funkhouse" : "indiebox-3", "bensound-gravity" : "andybirdArtwork", "bensound-lifeiswonderful" : "zacnelson" , "bensound-longroad" : "evertzeevalkink", "bensound-takingcare" : "indiebox-3", "bensound-wonderfulworld" : "indiebox-3", "bensound-worldonfire" : "andybirdArtwork"]
     var searchResultDataText : [String] = []
     
-    var searchResultDataIndex : [Int] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchResultDataText = MusicViewController.dataText
@@ -33,10 +31,18 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
         if searchText.isEmpty{
             searchResultDataText = MusicViewController.dataText
         }
         else{
+            /*searchResultDataText = []
+            for i in 0..<MusicViewController.dataText.count{
+                if MusicViewController.dataText[i].lowercased().contains(searchText.lowercased()){
+                    searchResultDataText.append(MusicViewController.dataText[i])
+                }
+            }
+            */
             searchResultDataText = MusicViewController.dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
         }
         musicTableView.reloadData()
@@ -46,6 +52,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
         let storyObject = UIStoryboard(name: "Main", bundle: nil)
         let musicPlayerScreen = storyObject.instantiateViewController(withIdentifier: "MusicPlayer") as! MusicPlayerViewController
         musicPlayerScreen.currentSong = searchResultDataText[indexPath.item]
+        musicPlayerScreen.currentSongImg = MusicViewController.dataImg[ searchResultDataText[indexPath.item]]!
         self.navigationController?.pushViewController(musicPlayerScreen, animated: true)
     }
 }
