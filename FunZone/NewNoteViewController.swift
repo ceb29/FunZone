@@ -18,12 +18,12 @@ class NewNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        noteContent.layer.cornerRadius = 10
+        noteContent.layer.cornerRadius = 10 //make note text field rounded
         noteContent.layer.masksToBounds = true
-        //getCurrentText()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //when view appears get current title and context
         super.viewWillAppear(true)
         getCurrentText()
     }
@@ -36,6 +36,7 @@ class NewNoteViewController: UIViewController {
     }
     
     func deleteNote(){
+        //delete note from saved notes and set new note status to true
         DBHelperNotes.dbHelper.deleteData(title: currentTitle)
         newNoteStatus = true
     }
@@ -73,6 +74,7 @@ class NewNoteViewController: UIViewController {
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
+        //if note is a saved note, delete it
         if !newNoteStatus{
             deleteNote()
             deleteCheckmark.isHidden = false
@@ -80,6 +82,7 @@ class NewNoteViewController: UIViewController {
     }
     
     func getCurrentText(){
+        //if note is a saved note load the title and text
         if !newNoteStatus{
             let note = DBHelperNotes.dbHelper.getOneNoteData(title:  currentTitle)
             noteTitle.text = currentTitle
