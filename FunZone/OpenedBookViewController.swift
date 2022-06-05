@@ -14,10 +14,10 @@ class OpenedBookViewController: UIViewController {
     var pdfname = ""
     
     override func viewDidLoad() {
+        //setup title and load pdf into custom view
         super.viewDidLoad()
         titleLabel.text = pdfname
         viewPdf(viewIn : bookView, filename: pdfname)
-        // Do any additional setup after loading the view.
     }
     
     func viewPdf(viewIn : UIView, filename : String){

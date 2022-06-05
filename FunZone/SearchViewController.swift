@@ -14,10 +14,12 @@ class SearchViewController: UIViewController{
     @IBOutlet weak var customView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        customView.isHidden = true
+        customView.isHidden = true //hide view so it doesn't cover background
     }
     
     @IBAction func startSearching(_ sender: Any) {
+        //if search button is pressed, hide button and label
+        //then setup and start webview
         startButton.isHidden = true
         searchLabel.isHidden = true
         setupWebView()

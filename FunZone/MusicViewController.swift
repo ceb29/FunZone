@@ -53,7 +53,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //setup next screen class and go to it
+        //setup next screen object and go to next screen
         let storyObject = UIStoryboard(name: "Main", bundle: nil)
         let musicPlayerScreen = storyObject.instantiateViewController(withIdentifier: "MusicPlayer") as! MusicPlayerViewController
         musicPlayerScreen.currentSong = searchResultDataText[indexPath.item]
