@@ -28,38 +28,55 @@ class NewNoteViewController: UIViewController {
         getCurrentText()
     }
     
+    func addNewNote(){
+        //create new note and save into new notes id
+        DBHelperNotes.dbHelper.addNoteData(titleValue: noteTitle.text!, contentValue: noteContent.text!)
+        newNoteStatus = false
+        currentTitle = noteTitle.text!
+    }
+    
+    func deleteNote(){
+        DBHelperNotes.dbHelper.deleteData(title: currentTitle)
+        newNoteStatus = true
+        print(1)
+    }
+    
     @IBAction func saveClicked(_ sender: Any) {
-        if currentTitle != noteTitle.text!{
+        //if title of saved note has changed, delete note and set new note status to true
+        if currentTitle != noteTitle.text! && !newNoteStatus{
+            deleteNote()
+            currentTitle = noteTitle.text!
             newNoteStatus = true
         }
+        //if new note status is true, add new note
+        //else update saved note
         if newNoteStatus{
+            //get note data for title
             let note = DBHelperNotes.dbHelper.getOneNoteData(title: noteTitle.text!)
-            if note.noteFlag{ //note with title already exists
-                //print("note title already exists")
+            //check if note with title already exists
+            if note.noteFlag{
+                //note with title already exists
                 resultLabel.text = "Title Already Exists"
             }
             else{
-                DBHelperNotes.dbHelper.addNoteData(titleValue: noteTitle.text!, contentValue: noteContent.text!)
-                newNoteStatus = false
-                currentTitle = noteTitle.text!
-                //create new note and save into new notes id
-                //print("saveNew")
-                //print(note.noteFlag)
+                //add new note and display save checkmark
+                addNewNote()
                 saveCheckmark.isHidden = false
+                //print("new note saved")
             }
         }
         else{
+            //update saved note and display save checkmark
             DBHelperNotes.dbHelper.updateNoteData(title: noteTitle.text!, content: noteContent.text!)
-            //print("saveUpdate")
             saveCheckmark.isHidden = false
+            //print("note updated")
         }
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
         if !newNoteStatus{
-            newNoteStatus = true
+            deleteNote()
             deleteCheckmark.isHidden = false
-            DBHelperNotes.dbHelper.deleteData(title: currentTitle)
         }
     }
     
