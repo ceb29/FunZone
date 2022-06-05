@@ -76,7 +76,8 @@ class MusicPlayerViewController: UIViewController {
     func stopPlaying(){
         switch currentStatus {
         case .stopped:
-            print("music already stopped")
+            //print("music already stopped")
+            break //do nothing
         default:
             musicPlayer?.stop()
             musicPlayer?.currentTime = 0
@@ -98,6 +99,21 @@ class MusicPlayerViewController: UIViewController {
         print("music is playing")
     }
     
+    func updateSong(){
+        currentSong = MusicViewController.dataText[currentSongIndex]
+        currentSongImg = MusicViewController.dataImg[currentSong]!
+        songTitleLabel.text = currentSong
+        songImg.image = UIImage(named: currentSongImg)
+        
+        switch currentStatus {
+        case .playing:
+            stopPlaying()
+            startPlaying()
+        default:
+            stopPlaying()
+        }
+    }
+    
     @IBAction func playPauseClicked(_ sender: Any) {
         switch currentStatus {
         case .playing:
@@ -117,7 +133,6 @@ class MusicPlayerViewController: UIViewController {
         default:
             stopPlaying()
         }
-
     }
     
     @IBAction func progressSliderMoved(_ sender: Any) {
@@ -129,21 +144,6 @@ class MusicPlayerViewController: UIViewController {
         }
         else{
             progressSlider.value = 0
-        }
-    }
-    
-    func updateSong(){
-        currentSong = MusicViewController.dataText[currentSongIndex]
-        currentSongImg = MusicViewController.dataImg[currentSong]!
-        songTitleLabel.text = currentSong
-        songImg.image = UIImage(named: currentSongImg)
-        
-        switch currentStatus {
-        case .playing:
-            stopPlaying()
-            startPlaying()
-        default:
-            stopPlaying()
         }
     }
     
@@ -170,9 +170,9 @@ class MusicPlayerViewController: UIViewController {
     @objc func updateMusicTime(){
         //resultLabel.text = getFormatedTime(Int(musicPlayer!.currentTime))
         //progressSlider.value = Float(musicPlayer!.currentTime) / Float(musicPlayer!.duration)
-        print("musicPlayer!.currenttime.description: ", musicPlayer?.currentTime.description, "simulatedTime: ", simulatedTime)
         simulatedTime+=1
         resultLabel.text = getFormatedTime(seconds: Int(simulatedTime))
         progressSlider.value = simulatedTime / Float(musicPlayer!.duration)
+        print("musicPlayer!.currenttime.description: ", musicPlayer?.currentTime.description, "simulatedTime: ", simulatedTime)
     }
 }
