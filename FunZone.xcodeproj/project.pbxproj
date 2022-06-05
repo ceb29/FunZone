@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8415A1132840141E008D1863 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415A1122840141E008D1863 /* NotesViewController.swift */; };
 		8415A11528401430008D1863 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415A11428401430008D1863 /* SearchViewController.swift */; };
-		8428DB77284AAF6F007F8758 /* SearchStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428DB76284AAF6F007F8758 /* SearchStartViewController.swift */; };
 		842B0E32284BE99700E78F4E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0E31284BE99700E78F4E /* SignUpViewController.swift */; };
 		84300EAF283ED68000748D9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84300EAE283ED68000748D9E /* AppDelegate.swift */; };
 		84300EB1283ED68000748D9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84300EB0283ED68000748D9E /* SceneDelegate.swift */; };
@@ -69,7 +68,6 @@
 /* Begin PBXFileReference section */
 		8415A1122840141E008D1863 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		8415A11428401430008D1863 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		8428DB76284AAF6F007F8758 /* SearchStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStartViewController.swift; sourceTree = "<group>"; };
 		842B0E31284BE99700E78F4E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84300EAB283ED68000748D9E /* FunZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84300EAE283ED68000748D9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				84BB8051284014EF0097A90E /* BooksViewController.swift */,
 				8452B69E284813A70049A9E8 /* OpenedBookViewController.swift */,
 				8415A11428401430008D1863 /* SearchViewController.swift */,
-				8428DB76284AAF6F007F8758 /* SearchStartViewController.swift */,
 				8415A1122840141E008D1863 /* NotesViewController.swift */,
 				84CEA85E28428E230078DCB1 /* NewNoteViewController.swift */,
 				84BB8053284015BB0097A90E /* MusicTableViewCell.swift */,
@@ -358,7 +355,6 @@
 				842B0E32284BE99700E78F4E /* SignUpViewController.swift in Sources */,
 				8474BE952846D57100B2A930 /* Users+CoreDataClass.swift in Sources */,
 				8452B69F284813A70049A9E8 /* OpenedBookViewController.swift in Sources */,
-				8428DB77284AAF6F007F8758 /* SearchStartViewController.swift in Sources */,
 				8474BE982846D5C900B2A930 /* DBHelperNotes.swift in Sources */,
 				84BB8054284015BB0097A90E /* MusicTableViewCell.swift in Sources */,
 			);
