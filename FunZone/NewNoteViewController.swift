@@ -38,7 +38,6 @@ class NewNoteViewController: UIViewController {
     func deleteNote(){
         DBHelperNotes.dbHelper.deleteData(title: currentTitle)
         newNoteStatus = true
-        print(1)
     }
     
     @IBAction func saveClicked(_ sender: Any) {
@@ -55,7 +54,7 @@ class NewNoteViewController: UIViewController {
             let note = DBHelperNotes.dbHelper.getOneNoteData(title: noteTitle.text!)
             //check if note with title already exists
             if note.noteFlag{
-                //note with title already exists
+                //display that note with title already exists
                 resultLabel.text = "Title Already Exists"
             }
             else{
