@@ -26,12 +26,15 @@ class MusicPlayerViewController: UIViewController {
     @IBOutlet weak var songImg: UIImageView!
     
     enum SongStatus {
+        //custom type for the different states the music player could be in
         case playing
         case stopped
         case paused
     }
     
     override func viewDidLoad() {
+        //setup label, image, musicplayer, and get the index of the current song
+        //index will be used when using next and previous buttons
         super.viewDidLoad()
         songTitleLabel.text = currentSong
         songImg.image = UIImage(named: currentSongImg)
@@ -40,11 +43,13 @@ class MusicPlayerViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        //if back button is pressed, make sure to stop playing music
         super.viewWillDisappear(animated)
         stopPlaying()
     }
     
     func setupMusicPlayer(){
+        //setup music player and use currentSong variable for filenames
         let filePath = Bundle.main.path(forResource: currentSong, ofType: "mp3")
         let url = URL(fileURLWithPath: filePath!)
         do{
@@ -56,6 +61,7 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func getFormatedTime(seconds : Int) -> String{
+        //method formats current time into 00:00 format (minutes:seconds)
         let minutes = seconds / 60
         let secondsRemaining = seconds % 60
         if secondsRemaining < 10{
@@ -65,6 +71,7 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func getCurrentSongIndex(){
+        //search for current song title in dataText and return index
         for i in 0..<dataTextSize - 1{
             if currentSong == MusicViewController.dataText[i]{
                 currentSongIndex = i
@@ -74,6 +81,8 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func stopPlaying(){
+        //if music is already stopped, do nothing
+        //eles stop playing music and reset
         switch currentStatus {
         case .stopped:
             //print("music already stopped")
@@ -91,6 +100,7 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func startPlaying(){
+        //start playing music and setup scheduled timer for displaying song data
         musicPlayer?.play()
         songLoaded = true
         durationLabel.text = getFormatedTime(seconds: Int(musicPlayer!.duration))
@@ -100,6 +110,8 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func updateSong(){
+        //when previous or next is pressed, setup song, labels, and image
+        //then based on current status either play new song or get ready to play
         currentSong = MusicViewController.dataText[currentSongIndex]
         currentSongImg = MusicViewController.dataImg[currentSong]!
         songTitleLabel.text = currentSong

@@ -15,7 +15,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchResultDataText = MusicViewController.dataText
+        searchResultDataText = MusicViewController.dataText //initial search results should hold all data
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,6 +23,7 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //set data for each row
         let myCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MusicTableViewCell
         myCell.musicLabel.text = searchResultDataText[indexPath.row]
         myCell.musicImg.image = UIImage(named: MusicViewController.dataImg[searchResultDataText[indexPath.row]]!)
@@ -31,11 +32,13 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        //if search text is empty searchResults should hold all data
+        //else filter data using search text
         if searchText.isEmpty{
             searchResultDataText = MusicViewController.dataText
         }
         else{
+            //filter results based on search text
             /*searchResultDataText = []
             for i in 0..<MusicViewController.dataText.count{
                 if MusicViewController.dataText[i].lowercased().contains(searchText.lowercased()){
@@ -43,12 +46,14 @@ class MusicViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
             }
             */
+            //higher order function that may be faster
             searchResultDataText = MusicViewController.dataText.filter {(str : String) -> Bool in return str.lowercased().contains(searchText.lowercased())}
         }
         musicTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //setup next screen class and go to it
         let storyObject = UIStoryboard(name: "Main", bundle: nil)
         let musicPlayerScreen = storyObject.instantiateViewController(withIdentifier: "MusicPlayer") as! MusicPlayerViewController
         musicPlayerScreen.currentSong = searchResultDataText[indexPath.item]

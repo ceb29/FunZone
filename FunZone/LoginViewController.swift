@@ -31,6 +31,9 @@ class LoginViewController: UIViewController {
     }
     
     func checkUser(){
+        //check if user exist and if not display invalid username
+        //then check if password matches and if not display invalid password
+        //if both username and password are valid, go to tab bar
         let data = DBHelperUsers.dbHelper.getOneUserData(username: usernameTextField.text!) //get user data for current username text
         if data.userFlag{ //check if user exists
             let correctPassword = data.userData.password!
@@ -57,6 +60,8 @@ class LoginViewController: UIViewController {
     }
     
     func saveUser(){
+        //if remember me is on set rememberFlag to on for next time using Userdefaults
+        //then save the username and password using keychain
         if rememberIsOn {
             userDefault.set(1, forKey: "rememberFlag")
             userDefault.set(usernameTextField.text!, forKey: "username")
@@ -68,7 +73,9 @@ class LoginViewController: UIViewController {
         }
     }
     
-    //methods for storing username and password
+    //
+    //methods for storing username and password with keychain
+    //
     func saveKey() {
         let attribute : [String : Any] = [kSecClass as String : kSecClassGenericPassword, kSecAttrAccount as String : usernameTextField.text, kSecValueData as String : passwordTextField.text!.data(using: .utf8)]
         
@@ -118,6 +125,10 @@ class LoginViewController: UIViewController {
             print("error during delete")
         }
     }
+    
+    //
+    // end of keychain methods
+    //
     
     @IBAction func changeRememberValue(_ sender: Any) {
         rememberIsOn = rememberIsOn ? false : true
