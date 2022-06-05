@@ -58,6 +58,8 @@ class MusicPlayerViewController: UIViewController {
         catch{
             print("file not found")
         }
+        durationLabel.text = getFormatedTime(seconds: Int(musicPlayer!.duration))
+        
     }
     
     func getFormatedTime(seconds : Int) -> String{
@@ -103,7 +105,6 @@ class MusicPlayerViewController: UIViewController {
         //start playing music and setup scheduled timer for displaying song data
         musicPlayer?.play()
         songLoaded = true
-        durationLabel.text = getFormatedTime(seconds: Int(musicPlayer!.duration))
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateMusicTime), userInfo: nil, repeats: true)
         currentStatus = .playing
         print("music is playing")
@@ -116,7 +117,7 @@ class MusicPlayerViewController: UIViewController {
         currentSongImg = MusicViewController.dataImg[currentSong]!
         songTitleLabel.text = currentSong
         songImg.image = UIImage(named: currentSongImg)
-        
+        setupMusicPlayer() //setup music player for new song path
         switch currentStatus {
         case .playing:
             stopPlaying()
