@@ -10,11 +10,13 @@ import PDFKit
 
 class OpenedBookViewController: UIViewController {
     @IBOutlet weak var bookView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     var pdfname = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewPdf(viewIn : view, filename: pdfname)
+        titleLabel.text = pdfname
+        viewPdf(viewIn : bookView, filename: pdfname)
         // Do any additional setup after loading the view.
     }
     
