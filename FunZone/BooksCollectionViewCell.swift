@@ -8,8 +8,7 @@
 import UIKit
 
 class BooksCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var bookImg: UIImageView!
-    
     @IBOutlet weak var bookLabel: UILabel!
+    
 }

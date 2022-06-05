@@ -8,6 +8,6 @@
 import UIKit
 
 class NoteCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var noteLabel: UILabel!
+    
 }
