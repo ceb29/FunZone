@@ -41,12 +41,12 @@ class NewNoteViewController: UIViewController {
             else{
                 DBHelperNotes.dbHelper.addNoteData(titleValue: noteTitle.text!, contentValue: noteContent.text!)
                 newNoteStatus = false
-                 //create new note and save into new notes id
+                currentTitle = noteTitle.text!
+                //create new note and save into new notes id
                 //print("saveNew")
                 //print(note.noteFlag)
                 saveCheckmark.isHidden = false
             }
-            
         }
         else{
             DBHelperNotes.dbHelper.updateNoteData(title: noteTitle.text!, content: noteContent.text!)
