@@ -61,9 +61,10 @@ class SignUpViewController: UIViewController {
     
     func goToLogin(){
         //go back to login screen
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let welcomeScreen = storyBoard.instantiateViewController(withIdentifier: "Login")
-        present(welcomeScreen, animated: true,  completion: nil)
+        self.navigationController?.popViewController(animated: true)
+        //let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        //let welcomeScreen = storyBoard.instantiateViewController(withIdentifier: "Login")
+        //present(welcomeScreen, animated: true,  completion: nil)
         //self.navigationController?.pushViewController(welcomeScreen, animated: true)
     }
 
