@@ -59,7 +59,7 @@ class MusicPlayerViewController: UIViewController {
             print("file not found")
         }
         durationLabel.text = getFormatedTime(seconds: Int(musicPlayer!.duration))
-        
+        songLoaded = true
     }
     
     func getFormatedTime(seconds : Int) -> String{
@@ -104,7 +104,6 @@ class MusicPlayerViewController: UIViewController {
     func startPlaying(){
         //start playing music and setup scheduled timer for displaying song data
         musicPlayer?.play()
-        songLoaded = true
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateMusicTime), userInfo: nil, repeats: true)
         currentStatus = .playing
         print("music is playing")
