@@ -118,7 +118,7 @@ class LoginViewController: UIViewController {
         let req : [String : Any] = [kSecClass as String: kSecClassGenericPassword, kSecAttrAccount as String : usernameTextField.text]
         let attribute : [String : Any] = [kSecValueData as String : passwordTextField.text!.data(using: .utf8)]
         if SecItemUpdate(req as CFDictionary, attribute as CFDictionary) == noErr{
-            print("password updated")
+            print("data saved succesfully")
         }
         else{
             print("error during update")
