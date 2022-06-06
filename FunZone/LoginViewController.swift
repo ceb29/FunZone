@@ -25,8 +25,8 @@ class LoginViewController: UIViewController {
         let remUser = userDefault.string(forKey: "username")
         if rememberFlag == 1{
             let user = getKey(remUser!)
-            usernameTextField.text = user[0]
-            passwordTextField.text = user[1]
+            usernameTextField.text = user.userData[0]
+            passwordTextField.text = user.userData[1]
         }
     }
     
@@ -51,6 +51,17 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func saveOrUpdateKey(){
+        //if app was deleted and key already exist update it else save
+        let user = getKey(usernameTextField.text!)
+        if user.keyFlag{
+            updateKey()
+        }
+        else{
+            saveKey()
+        }
+    }
+    
     func goToMusic(){
         //go to next screen after login is successful
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -65,7 +76,7 @@ class LoginViewController: UIViewController {
         if rememberIsOn {
             userDefault.set(1, forKey: "rememberFlag")
             userDefault.set(usernameTextField.text!, forKey: "username")
-            saveKey()
+            saveOrUpdateKey()
         }
         else{
             userDefault.set(0, forKey: "rememberFlag")
@@ -78,7 +89,6 @@ class LoginViewController: UIViewController {
     //
     func saveKey() {
         let attribute : [String : Any] = [kSecClass as String : kSecClassGenericPassword, kSecAttrAccount as String : usernameTextField.text, kSecValueData as String : passwordTextField.text!.data(using: .utf8)]
-        
         if SecItemAdd(attribute as CFDictionary, nil) == noErr{
             print("data saved successfully")
         }
@@ -87,7 +97,7 @@ class LoginViewController: UIViewController {
         //}
     }
     
-    func getKey(_ username : String) -> [String] {
+    func getKey(_ username : String) -> (userData : [String], keyFlag: Bool) {
         let req : [String : Any] = [kSecClass as String: kSecClassGenericPassword, kSecAttrAccount as String : username, kSecReturnAttributes as String : true, kSecReturnData as String : true]
         
         var res : CFTypeRef?
@@ -97,10 +107,10 @@ class LoginViewController: UIViewController {
             let userPassword = (data![kSecValueData as String] as? Data)!
             let pass = String(data: userPassword, encoding: .utf8)
             let user = [id!, pass!]
-            return user
+            return (user, true)
         }
         else{
-            return ["error", "error"]
+            return (["error", "error"], false)
         }
     }
     
