@@ -24,9 +24,14 @@ class LoginViewController: UIViewController {
         let rememberFlag = userDefault.integer(forKey: "rememberFlag")
         let remUser = userDefault.string(forKey: "username")
         if rememberFlag == 1{
-            let user = getKey(remUser!)
-            usernameTextField.text = user.userData[0]
-            passwordTextField.text = user.userData[1]
+            if remUser == nil{
+                print("failed to save username")
+            }
+            else{
+                let user = getKey(remUser!)
+                usernameTextField.text = user.userData[0]
+                passwordTextField.text = user.userData[1]
+            }
         }
     }
     
@@ -51,17 +56,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func saveOrUpdateKey(){
-        //if app was deleted and key already exist update it else save
-        let user = getKey(usernameTextField.text!)
-        if user.keyFlag{
-            updateKey()
-        }
-        else{
-            saveKey()
-        }
-    }
-    
     func goToMusic(){
         //go to next screen after login is successful
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -81,6 +75,17 @@ class LoginViewController: UIViewController {
         else{
             userDefault.set(0, forKey: "rememberFlag")
             deleteKey()
+        }
+    }
+    
+    func saveOrUpdateKey(){
+        //if app was deleted and key already exist update it else save
+        let user = getKey(usernameTextField.text!)
+        if user.keyFlag{
+            updateKey()
+        }
+        else{
+            saveKey()
         }
     }
     
@@ -118,7 +123,7 @@ class LoginViewController: UIViewController {
         let req : [String : Any] = [kSecClass as String: kSecClassGenericPassword, kSecAttrAccount as String : usernameTextField.text]
         let attribute : [String : Any] = [kSecValueData as String : passwordTextField.text!.data(using: .utf8)]
         if SecItemUpdate(req as CFDictionary, attribute as CFDictionary) == noErr{
-            print("data saved succesfully")
+            print("data saved succesfully1")
         }
         else{
             print("error during update")

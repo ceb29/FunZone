@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="height" constant="48" id="xht-xA-pry"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Submit">
+                                <buttonConfiguration key="configuration" style="filled" title="Sign In">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
